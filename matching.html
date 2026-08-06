@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>URI Canada — Algorithme de Matching</title>
+<meta name="description" content="Découvrez comment l'algorithme URI Canada sélectionne le candidat idéal pour chaque poste : 8 critères pondérés, score transparent, taux de réussite.">
+<link rel="canonical" href="https://uricanada.ca/matching">
+<meta name="theme-color" content="#16264a">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/svg+xml" sizes="any" href="favicon.svg">
+<link rel="mask-icon" href="/favicon.svg" color="#16264a">
+<meta property="og:title" content="URI Canada — Matching Candidats · Entreprises">
+<meta property="og:description" content="Le bon talent à la bonne place. Algorithme en 8 critères, score transparent.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Figtree:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#101a2e;--paper:#f5f6f9;--navy:#16264a;--navy2:#223c6e;
+  --coral:#ff6a48;--coral2:#e5502f;--mist:#d7deea;--line:#dde2ec;
+  --muted:#586179;--success:#1a7a47;--warn:#c8892a;--green:#0d9e5b;
+  --shadow:0 1px 2px rgba(16,26,46,.05),0 18px 44px -18px rgba(16,26,46,.3);
+  --r:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:"Figtree",system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{font-family:"Fraunces",Georgia,serif;font-weight:500;line-height:1.05;letter-spacing:-.01em}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+.eyebrow{font-family:"Spline Sans Mono",monospace;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--coral2)}
+
+/* NAV */
+header{position:sticky;top:0;z-index:50;background:rgba(245,246,249,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:66px}
+.brand{display:flex;align-items:center;gap:10px;font-family:"Fraunces";font-size:20px;font-weight:600}
+.brand .mark{width:28px;height:28px;border-radius:8px;background:var(--navy);position:relative;flex:0 0 auto}
+.brand .mark::after{content:"";position:absolute;inset:9px 7px auto 7px;height:3px;border-radius:2px;background:var(--coral)}
+.navlinks{display:flex;gap:20px;align-items:center;font-size:15px;color:var(--muted)}
+.navlinks a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--coral);color:#fff;font-weight:600;padding:12px 20px;border-radius:11px;font-size:15px;border:1px solid var(--coral2);cursor:pointer;transition:transform .15s,box-shadow .15s;font-family:inherit;white-space:nowrap}
+.btn:hover{transform:translateY(-1px);box-shadow:0 10px 24px -8px rgba(229,80,47,.5)}
+.btn.ghost{background:transparent;color:var(--navy);border-color:var(--mist)}
+.btn.ghost:hover{background:#ecf0f6}
+.btn.navy{background:var(--navy);border-color:var(--navy2)}
+.btn.navy:hover{box-shadow:0 10px 24px -8px rgba(22,38,74,.5)}
+.btn.sm{padding:9px 15px;font-size:14px}
+.btn.white{background:#fff;color:var(--coral2);border-color:#fff}
+.btn.ghost-white{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
+.btn.ghost-white:hover{background:rgba(255,255,255,.1)}
+.nav-active{color:var(--navy);font-weight:600}
+@media(max-width:900px){.navlinks a:not(.btn){display:none}}
+
+/* HERO */
+.hero{background:linear-gradient(158deg,var(--navy) 0%,#0d1930 100%);color:#eaeef6;padding:80px 0 72px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-180px;right:-140px;width:520px;height:520px;background:radial-gradient(circle,rgba(255,106,72,.2),transparent 62%)}
+.hero::after{content:"";position:absolute;bottom:-80px;left:-80px;width:300px;height:300px;background:radial-gradient(circle,rgba(255,106,72,.1),transparent 65%)}
+.hero-inner{position:relative;text-align:center;max-width:780px;margin:0 auto}
+.hero .eyebrow{color:var(--coral)}
+.hero h1{font-size:clamp(36px,5.5vw,64px);color:#fff;margin-top:14px}
+.hero p.lead{margin:20px auto 36px;font-size:18px;color:#b8c2d6;max-width:52ch}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+.hero-badges{display:flex;gap:10px;margin-top:30px;flex-wrap:wrap;justify-content:center}
+.hbadge{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:6px 14px;font-size:13px;color:#b8c2d6}
+.hbadge .dot{width:6px;height:6px;border-radius:50%;background:var(--green);flex:0 0 auto}
+
+/* BIG SCORE */
+.score-pill{display:inline-flex;align-items:center;gap:18px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:14px 28px;margin:32px auto 0;font-size:15px;color:#b8c2d6}
+.score-num{font-family:"Spline Sans Mono";font-size:42px;font-weight:500;color:#fff;line-height:1}
+.score-label{display:flex;flex-direction:column;text-align:left;gap:2px}
+.score-label strong{color:#fff;font-size:16px;font-family:"Fraunces"}
+.score-label span{font-size:13px}
+
+/* STATS BAR */
+.stats-bar{background:var(--navy);border-top:1px solid rgba(255,255,255,.06)}
+.stats-bar .wrap{display:flex;flex-wrap:wrap;gap:0;justify-content:space-between}
+.stat-item{padding:18px 20px;display:flex;flex-direction:column;align-items:center;text-align:center;border-right:1px solid rgba(255,255,255,.06);flex:1;min-width:140px}
+.stat-item:last-child{border-right:none}
+.stat-item .num{font-family:"Spline Sans Mono";font-size:26px;color:#fff;font-weight:500}
+.stat-item .lbl{font-size:13px;color:#8293b0;margin-top:2px}
+
+/* SECTIONS */
+section.blk{padding:88px 0}
+.shead{max-width:660px;margin-bottom:48px}
+.shead h2{font-size:clamp(29px,4vw,46px);margin-top:12px}
+.shead p{color:var(--muted);margin-top:14px;font-size:17px}
+
+/* ALGO CRITERIA */
+.criteria-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px}
+.crit-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px;transition:box-shadow .2s}
+.crit-card:hover{box-shadow:var(--shadow)}
+.crit-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:12px}
+.crit-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex:0 0 auto}
+.crit-weight{font-family:"Spline Sans Mono";font-size:22px;font-weight:500;color:var(--navy)}
+.crit-label{font-size:11px;color:var(--muted);margin-top:2px;text-align:right}
+.crit-card h4{font-size:16px;font-family:"Fraunces";color:var(--ink);margin-bottom:6px}
+.crit-card p{font-size:14px;color:var(--muted);line-height:1.5}
+.crit-bar-wrap{margin-top:14px;background:var(--line);border-radius:4px;height:6px;overflow:hidden}
+.crit-bar{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--coral),var(--coral2))}
+
+/* INTERACTIVE DEMO */
+.demo-wrap{background:#fff;border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:var(--shadow)}
+.demo-header{background:var(--navy);color:#fff;padding:20px 28px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.demo-header h3{font-size:20px;color:#fff}
+.demo-tag{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:999px;padding:5px 14px;font-size:13px;color:#b8c2d6;font-family:"Spline Sans Mono"}
+.demo-body{display:grid;grid-template-columns:340px 1fr;gap:0}
+@media(max-width:860px){.demo-body{grid-template-columns:1fr}}
+
+/* FILTERS PANEL */
+.filters-panel{border-right:1px solid var(--line);padding:28px}
+.filter-group{margin-bottom:22px}
+.filter-group label{display:block;font-size:13px;font-weight:600;color:var(--ink);margin-bottom:8px;letter-spacing:.01em}
+.filter-group select,.filter-group input[type=range]{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:10px;font-family:inherit;font-size:14px;color:var(--ink);background:#fff;appearance:none;cursor:pointer}
+.filter-group select:focus,.filter-group input:focus{outline:none;border-color:var(--coral)}
+.range-wrap{position:relative}
+input[type=range]{padding:0;height:6px;border:none;border-radius:4px;background:var(--line);cursor:pointer;accent-color:var(--coral)}
+.range-val{font-family:"Spline Sans Mono";font-size:13px;color:var(--coral2);font-weight:500;margin-top:6px}
+.toggle-group{display:flex;gap:8px;flex-wrap:wrap}
+.tog{padding:7px 14px;border:1px solid var(--line);border-radius:8px;font-size:13px;cursor:pointer;background:#fff;color:var(--muted);transition:.15s;user-select:none}
+.tog.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+.filter-run{width:100%;margin-top:6px}
+
+/* CANDIDATES PANEL */
+.candidates-panel{padding:24px 28px;display:flex;flex-direction:column;gap:14px;max-height:640px;overflow-y:auto}
+.cand-card{border:1px solid var(--line);border-radius:14px;padding:18px;background:#fff;display:flex;gap:16px;align-items:flex-start;transition:border-color .2s,box-shadow .2s;position:relative}
+.cand-card.top-match{border-color:var(--green);box-shadow:0 0 0 2px rgba(13,158,91,.12)}
+.cand-avatar{width:46px;height:46px;border-radius:12px;flex:0 0 auto;display:flex;align-items:center;justify-content:center;font-size:20px;background:var(--paper)}
+.cand-info{flex:1;min-width:0}
+.cand-name{font-family:"Fraunces";font-size:16px;font-weight:500}
+.cand-meta{font-size:13px;color:var(--muted);margin-top:2px}
+.cand-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.ctag{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:3px 9px;font-size:12px;color:var(--muted)}
+.cand-score-wrap{display:flex;flex-direction:column;align-items:center;gap:4px;flex:0 0 auto}
+.score-ring{width:58px;height:58px;position:relative}
+.score-ring svg{position:absolute;top:0;left:0;transform:rotate(-90deg)}
+.score-ring-val{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:"Spline Sans Mono";font-size:14px;font-weight:500}
+.score-label-sm{font-size:11px;color:var(--muted);text-align:center}
+.match-badge{position:absolute;top:12px;right:12px;background:var(--green);color:#fff;font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;letter-spacing:.04em}
+.criteria-breakdown{margin-top:12px;display:none}
+.cand-card.expanded .criteria-breakdown{display:block}
+.breakdown-row{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.breakdown-label{font-size:12px;color:var(--muted);width:120px;flex:0 0 auto}
+.breakdown-bar-wrap{flex:1;background:var(--line);border-radius:4px;height:5px;overflow:hidden}
+.breakdown-bar{height:100%;border-radius:4px;transition:width .6s}
+.breakdown-score{font-family:"Spline Sans Mono";font-size:11px;color:var(--ink);width:28px;text-align:right;flex:0 0 auto}
+.expand-btn{background:none;border:none;color:var(--muted);font-size:13px;cursor:pointer;padding:6px 0 0;font-family:inherit;text-decoration:underline;display:block}
+
+/* PROCESS */
+.process-steps{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:0;position:relative}
+.process-steps::before{content:"";position:absolute;top:26px;left:0;right:0;height:2px;background:var(--line);z-index:0}
+@media(max-width:700px){.process-steps::before{display:none}}
+.pstep{text-align:center;padding:24px 20px;position:relative;z-index:1;background:var(--paper)}
+.pstep-num{width:52px;height:52px;border-radius:50%;background:var(--navy);color:#fff;font-family:"Fraunces";font-size:20px;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;border:3px solid var(--paper);box-shadow:0 0 0 2px var(--navy)}
+.pstep h4{font-size:16px;margin-bottom:8px}
+.pstep p{font-size:14px;color:var(--muted)}
+
+/* GUARANTEE STRIP */
+.guarantee{background:linear-gradient(135deg,#0d1930 0%,var(--navy) 100%);border-radius:24px;padding:60px 48px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+@media(max-width:700px){.guarantee{grid-template-columns:1fr;padding:40px 28px;gap:32px}}
+.guarantee h2{font-size:clamp(28px,4vw,42px);color:#fff;margin-top:10px}
+.guarantee p{color:#b8c2d6;margin-top:14px;font-size:16px}
+.guarantee .eyebrow{color:var(--coral)}
+.gtiles{display:flex;flex-direction:column;gap:14px}
+.gtile{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:18px 20px;display:flex;gap:14px;align-items:flex-start}
+.gtile-icon{font-size:22px;flex:0 0 auto;line-height:1;padding-top:2px}
+.gtile-text h4{font-family:"Fraunces";font-size:15px;color:#fff;margin-bottom:4px}
+.gtile-text p{font-size:13px;color:#8293b0}
+
+/* TESTIMONIALS */
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.testi-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:24px}
+.stars{color:#f5a623;font-size:18px;margin-bottom:12px}
+.testi-card blockquote{font-size:15px;color:var(--ink);line-height:1.65;font-style:italic}
+.testi-author{display:flex;align-items:center;gap:12px;margin-top:16px;padding-top:16px;border-top:1px solid var(--line)}
+.author-avatar{width:38px;height:38px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-family:"Fraunces";font-size:16px;flex:0 0 auto}
+.author-info{display:flex;flex-direction:column}
+.author-name{font-weight:600;font-size:14px}
+.author-role{font-size:13px;color:var(--muted)}
+
+/* CTA */
+.cta-block{background:var(--coral);border-radius:24px;padding:60px 48px;text-align:center}
+@media(max-width:700px){.cta-block{padding:40px 24px}}
+.cta-block h2{color:#fff;font-size:clamp(28px,4vw,44px)}
+.cta-block p{color:rgba(255,255,255,.85);margin:14px auto 32px;font-size:17px;max-width:46ch}
+.cta-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+/* FOOTER */
+footer{background:var(--navy);color:#8293b0;padding:40px 0;font-size:14px}
+.footer-row{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap}
+.footer-links a:hover{color:#fff}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s}
+.reveal.visible{opacity:1;transform:none}
+
+/* NO RESULTS */
+.no-results{text-align:center;padding:40px 20px;color:var(--muted)}
+.no-results svg{margin:0 auto 12px}
+
+/* MATCH METER */
+.match-meter-wrap{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;background:var(--paper);border-radius:14px;border:1px solid var(--line);margin-bottom:14px}
+.match-meter-label{font-size:13px;color:var(--muted);margin-bottom:8px}
+.match-meter-val{font-family:"Spline Sans Mono";font-size:44px;font-weight:500;color:var(--navy);line-height:1}
+.match-meter-sub{font-size:12px;color:var(--muted);margin-top:4px}
+.meter-bar{width:100%;background:var(--line);border-radius:6px;height:10px;margin-top:12px;overflow:hidden}
+.meter-fill{height:100%;border-radius:6px;transition:width .5s ease;background:linear-gradient(90deg,var(--coral),var(--green))}
+.brand-logo{height:32px;width:auto;display:block}.brand-logo-sm{height:22px;width:auto;display:inline-block;vertical-align:middle}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header>
+<nav class="wrap">
+  <a class="brand" href="index.html">
+    <img src="logo-uri.png" alt="URI Canada" class="brand-logo"> Canada
+  </a>
+  <div class="navlinks">
+    <a href="index.html">Accueil</a>
+    <a href="offres.html">Offres d'emploi</a>
+    <a href="employeurs.html">Employeurs</a>
+    <a href="portail-temporaires.html">Court terme</a>
+    <a href="matching.html" class="nav-active">Matching</a>
+    <a href="mailto:contact@uricanada.ca" class="btn sm">Contactez-nous</a>
+  </div>
+</nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-inner">
+      <div class="eyebrow">Algorithme de matching</div>
+      <h1>Le bon talent, à la bonne place — toujours</h1>
+      <p class="lead">Notre algorithme en 8 critères pondérés analyse des dizaines de variables pour proposer les candidats dont le profil correspond réellement aux besoins de l'entreprise — pas juste un CV qui "colle à moitié".</p>
+      <div class="score-pill">
+        <div class="score-num" id="heroScore">★</div>
+        <div class="score-label">
+          <strong>Des placements qui durent</strong>
+          <span>340 placements réussis sur les 12 derniers mois</span>
+        </div>
+      </div>
+      <div class="hero-badges" style="margin-top:24px">
+        <div class="hbadge"><span class="dot"></span>Analyse transparente pour chaque candidat</div>
+        <div class="hbadge"><span class="dot"></span>Critères pondérés par secteur</div>
+        <div class="hbadge"><span class="dot"></span>Remplacement garanti si le profil ne convient pas</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="wrap">
+    <div class="stat-item"><div class="num">340+</div><div class="lbl">Placements réussis</div></div>
+    <div class="stat-item"><div class="num">340+</div><div class="lbl">Placements réussis / an</div></div>
+    <div class="stat-item"><div class="num">8</div><div class="lbl">Critères de matching</div></div>
+    <div class="stat-item"><div class="num">48 h</div><div class="lbl">Délai moyen de présentation</div></div>
+    <div class="stat-item"><div class="num">12</div><div class="lbl">Secteurs couverts</div></div>
+  </div>
+</div>
+
+<!-- CRITERIA -->
+<section class="blk">
+  <div class="wrap">
+    <div class="shead reveal">
+      <div class="eyebrow">Méthodologie</div>
+      <h2>8 critères pondérés, zéro compromis</h2>
+      <p>Chaque candidat reçoit un score de 0 à 100 pour chaque poste. Seuls ceux dépassant le seuil de compatibilité sont présentés — vous ne voyez que des candidats qualifiés.</p>
+    </div>
+    <div class="criteria-grid">
+      <div class="crit-card reveal">
+        <div class="crit-top">
+          <div class="crit-icon" style="background:#eaf1ff">🎯</div>
+          <div style="text-align:right"><div class="crit-weight">30 %</div><div class="crit-label">Poids total</div></div>
+        </div>
+        <h4>Secteur &amp; Poste</h4>
+        <p>Correspondance exacte du titre et de la catégorie d'emploi. Critère éliminatoire si le secteur ne correspond pas.</p>
+        <div class="crit-bar-wrap"><div class="crit-bar" style="width:100%"></div></div>
+      </div>
+      <div class="crit-card reveal">
+        <div class="crit-top">
+          <div class="crit-icon" style="background:#fff0eb">⚙️</div>
+          <div style="text-align:right"><div class="crit-weight">25 %</div><div class="crit-label">Poids total</div></div>
+        </div>
+        <h4>Compétences techniques</h4>
+        <p>Ratio de compétences requises que le candidat possède. Score pondéré par criticité de chaque compétence.</p>
+        <div class="crit-bar-wrap"><div class="crit-bar" style="width:83%"></div></div>
+      </div>
+      <div class="crit-card reveal">
+        <div class="crit-top">
+          <div class="crit-icon" style="background:#f0faf3">📅</div>
+          <div style="text-align:right"><div class="crit-weight">15 %</div><div class="crit-label">Poids total</div></div>
+        </div>
+        <h4>Expérience</h4>
+        <p>Années d'expérience dans le rôle ou équivalent direct. Bonus pour expérience dans l'industrie précise.</p>
+        <div class="crit-bar-wrap"><div class="crit-bar" style="width:50%"></div></div>
+      </div>
+      <div class="crit-card reveal">
+        <div class="crit-top">
+          <div class="crit-icon" style="background:#f5f0ff">📍</div>
+          <div style="text-align:right"><div class="crit-weight">10 %</div><div class="crit-label">Poids total</div></div>
+        </div>
+        <h4>Région &amp; Mobilité</h4>
+        <p>Distance entre la résidence du candidat et le lieu de travail, modifiée selon la mobilité déclarée.</p>
+        <div class="crit-bar-wrap"><div class="crit-bar" style="width:33%"></div></div>
+      </div>
+      <div class="crit-card reveal">
+        <div class="crit-top">
+          <div class="crit-icon" style="background:#fffbeb">⏱️</div>
+          <div style="text-align:right"><div class="crit-weight">8 %</div><div class="crit-label">Poids total</div></div>
+        </div>
+        <h4>Disponibilité</h4>
+        <p>Compatibilité de la date de début souhaitée avec les besoins de l'entreprise. Urgence court terme valorisée.</p>
+        <div class="crit-bar-wrap"><div class="crit-bar" style="width:27%"></div></div>
+      </div>
+      <div class="crit-card reveal">
+        <div class="crit-top">
+          <div class="crit-icon" style="background:#fff0f5">🗣️</div>
+          <div style="text-align:right"><div class="crit-weight">7 %</div><div class="crit-label">Poids total</div></div>
+        </div>
+        <h4>Langue de travail</h4>
+        <p>Maîtrise du français, de l'anglais ou des deux selon les exigences du poste. Évaluation écrite et orale.</p>
+        <div class="crit-bar-wrap"><div class="crit-bar" style="width:23%"></div></div>
+      </div>
+      <div class="crit-card reveal">
+        <div class="crit-top">
+          <div class="crit-icon" style="background:#f0faff">💰</div>
+          <div style="text-align:right"><div class="crit-weight">3 %</div><div class="crit-label">Poids total</div></div>
+        </div>
+        <h4>Rémunération</h4>
+        <p>Chevauchement entre les attentes salariales du candidat et l'échelle offerte par l'entreprise.</p>
+        <div class="crit-bar-wrap"><div class="crit-bar" style="width:10%"></div></div>
+      </div>
+      <div class="crit-card reveal">
+        <div class="crit-top">
+          <div class="crit-icon" style="background:#f5fff0">🎓</div>
+          <div style="text-align:right"><div class="crit-weight">2 %</div><div class="crit-label">Poids total</div></div>
+        </div>
+        <h4>Éducation</h4>
+        <p>Adéquation du niveau d'éducation et des certifications spécifiques requises pour le poste.</p>
+        <div class="crit-bar-wrap"><div class="crit-bar" style="width:7%"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTERACTIVE DEMO -->
+<section class="blk" style="padding-top:0">
+  <div class="wrap">
+    <div class="shead reveal">
+      <div class="eyebrow">Démo interactive</div>
+      <h2>Voyez le matching en action</h2>
+      <p>Sélectionnez vos critères et observez les scores se recalculer en temps réel parmi nos candidats fictifs de démonstration.</p>
+    </div>
+    <div class="demo-wrap reveal">
+      <div class="demo-header">
+        <div>
+          <h3>Simulateur de matching</h3>
+          <div style="color:#8293b0;font-size:14px;margin-top:4px">Ajustez les filtres → les scores candidats se mettent à jour automatiquement</div>
+        </div>
+        <div class="demo-tag">Démo — données fictives</div>
+      </div>
+      <div class="demo-body">
+        <!-- FILTERS -->
+        <div class="filters-panel">
+          <div class="match-meter-wrap" id="avgMeter">
+            <div class="match-meter-label">Score moyen — candidats affichés</div>
+            <div class="match-meter-val" id="avgScore">—</div>
+            <div class="match-meter-sub">/ 100 points</div>
+            <div class="meter-bar"><div class="meter-fill" id="meterFill" style="width:0%"></div></div>
+          </div>
+
+          <div class="filter-group">
+            <label>Secteur</label>
+            <select id="fSecteur">
+              <option value="all">Tous les secteurs</option>
+              <option value="construction">Construction &amp; Rénovation</option>
+              <option value="tech">Technologies &amp; TI</option>
+              <option value="sante">Santé &amp; Services sociaux</option>
+              <option value="transport">Transport &amp; Logistique</option>
+              <option value="finance">Finance &amp; Comptabilité</option>
+              <option value="restauration">Restauration &amp; Hôtellerie</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label>Type de placement</label>
+            <div class="toggle-group">
+              <div class="tog active" data-val="permanent" data-group="type">Permanent</div>
+              <div class="tog active" data-val="temporaire" data-group="type">Temporaire</div>
+              <div class="tog active" data-val="international" data-group="type">International</div>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <label>Expérience minimale (années)</label>
+            <input type="range" id="fExp" min="0" max="15" value="2" step="1">
+            <div class="range-val"><span id="fExpVal">2</span> ans minimum</div>
+          </div>
+
+          <div class="filter-group">
+            <label>Langue requise</label>
+            <select id="fLang">
+              <option value="all">Toutes</option>
+              <option value="fr">Français uniquement</option>
+              <option value="en">Anglais uniquement</option>
+              <option value="bilingual">Bilingue (FR + EN)</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label>Région</label>
+            <select id="fRegion">
+              <option value="all">Toutes les régions</option>
+              <option value="montreal">Montréal &amp; Rive-Sud</option>
+              <option value="quebec">Québec (ville)</option>
+              <option value="ontario">Ontario</option>
+              <option value="bc">Colombie-Britannique</option>
+              <option value="prairies">Prairies</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label>Seuil de score minimum</label>
+            <input type="range" id="fMinScore" min="50" max="95" value="70" step="5">
+            <div class="range-val">≥ <span id="fMinScoreVal">70</span> / 100</div>
+          </div>
+
+          <button class="btn navy filter-run" onclick="runMatch()">Lancer le matching ▸</button>
+        </div>
+
+        <!-- CANDIDATES -->
+        <div class="candidates-panel" id="candidatesPanel">
+          <div style="color:var(--muted);text-align:center;padding:40px 20px;font-size:15px">
+            Configurez les filtres et lancez le matching pour voir les candidats correspondants.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="blk" style="background:#fff">
+  <div class="wrap">
+    <div class="shead reveal">
+      <div class="eyebrow">Comment ça fonctionne</div>
+      <h2>De la demande au placement en 5 étapes</h2>
+    </div>
+    <div class="process-steps reveal">
+      <div class="pstep">
+        <div class="pstep-num">1</div>
+        <h4>Intake complet</h4>
+        <p>Vous décrivez le poste, les compétences requises, la culture d'équipe et les contraintes opérationnelles.</p>
+      </div>
+      <div class="pstep">
+        <div class="pstep-num">2</div>
+        <h4>Analyse &amp; scoring</h4>
+        <p>L'algorithme analyse notre base de candidats actifs et calcule un score pour chaque profil.</p>
+      </div>
+      <div class="pstep">
+        <div class="pstep-num">3</div>
+        <h4>Sélection humaine</h4>
+        <p>Nos recruteurs valident les profils à score élevé et ajoutent leur jugement contextuels.</p>
+      </div>
+      <div class="pstep">
+        <div class="pstep-num">4</div>
+        <h4>Présentation ciblée</h4>
+        <p>Vous recevez 2 à 4 profils maximum avec leur score détaillé — pas une pile de CV.</p>
+      </div>
+      <div class="pstep">
+        <div class="pstep-num">5</div>
+        <h4>Suivi post-placement</h4>
+        <p>Suivi à 30, 60 et 90 jours. Remplacement garanti sans frais si inadéquation avérée.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEE -->
+<section class="blk">
+  <div class="wrap">
+    <div class="guarantee reveal">
+      <div>
+        <div class="eyebrow">Notre engagement</div>
+        <h2>Le bon profil, ou on recommence — sans frais</h2>
+        <p>Si un candidat que nous avons placé ne convient pas dans les 90 premiers jours pour une raison liée à l'adéquation du profil, nous assurons le remplacement sans honoraires supplémentaires.</p>
+        <a href="mailto:contact@uricanada.ca" class="btn white" style="margin-top:28px;color:var(--navy)">Parler à un recruteur</a>
+      </div>
+      <div class="gtiles">
+        <div class="gtile">
+          <div class="gtile-icon">✅</div>
+          <div class="gtile-text">
+            <h4>Remplacement garanti 90 jours</h4>
+            <p>Si le candidat ne convient pas pour des raisons d'adéquation de profil, on reprend le processus sans frais.</p>
+          </div>
+        </div>
+        <div class="gtile">
+          <div class="gtile-icon">🔍</div>
+          <div class="gtile-text">
+            <h4>Score transparent à chaque profil</h4>
+            <p>Vous voyez le détail des 8 critères pour chaque candidat présenté — aucune boîte noire.</p>
+          </div>
+        </div>
+        <div class="gtile">
+          <div class="gtile-icon">⚡</div>
+          <div class="gtile-text">
+            <h4>Présentation en 48 h</h4>
+            <p>Pour les placements permanents. Court terme disponible en 48 h ouvrables.</p>
+          </div>
+        </div>
+        <div class="gtile">
+          <div class="gtile-icon">🌐</div>
+          <div class="gtile-text">
+            <h4>Candidats locaux &amp; internationaux</h4>
+            <p>Accès à notre bassin de candidats qualifiés à travers le Canada et à l'international.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="blk" style="background:#fff">
+  <div class="wrap">
+    <div class="shead reveal">
+      <div class="eyebrow">Ce que disent nos clients</div>
+      <h2>Ils ont trouvé le bon profil</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <div class="stars">★★★★★</div>
+        <blockquote>"URI Canada nous a présenté deux candidats en 36 heures. Les scores détaillés nous ont permis de choisir en toute confiance. Le candidat retenu est toujours avec nous 14 mois plus tard."</blockquote>
+        <div class="testi-author">
+          <div class="author-avatar">M</div>
+          <div class="author-info">
+            <span class="author-name">Marc Tremblay</span>
+            <span class="author-role">DRH — Entreprise de construction, Laval</span>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="stars">★★★★★</div>
+        <blockquote>"On cherchait un comptable CPA bilingue disponible immédiatement. URI Canada nous a proposé trois profils scorés en 48 h — exactement ce dont on avait besoin, pas des piles de CV inutiles."</blockquote>
+        <div class="testi-author">
+          <div class="author-avatar">S</div>
+          <div class="author-info">
+            <span class="author-name">Sophie Beauchemin</span>
+            <span class="author-role">CEO — PME manufacturière, Québec</span>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Le score de matching nous a vraiment aidé à comprendre pourquoi un candidat correspondait mieux qu'un autre. Transparence totale, résultat parfait. Je recommande sans hésiter."</blockquote>
+        <div class="testi-author">
+          <div class="author-avatar">J</div>
+          <div class="author-info">
+            <span class="author-name">Jonathan Côté</span>
+            <span class="author-role">Directeur Opérations — Firme TI, Montréal</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="blk">
+  <div class="wrap">
+    <div class="cta-block reveal">
+      <div class="eyebrow" style="color:rgba(255,255,255,.7)">Prêt à commencer ?</div>
+      <h2>Décrivez votre poste, on s'occupe du matching</h2>
+      <p>Soumettez votre demande en 5 minutes. Notre équipe vous contacte dans les 2 heures ouvrables suivantes avec une estimation et un plan d'action.</p>
+      <div class="cta-actions">
+        <a href="employeurs.html" class="btn white">Publier un poste</a>
+        <a href="mailto:contact@uricanada.ca" class="btn ghost-white">Parler à un recruteur</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="footer-row">
+      <div class="brand" style="color:#fff">
+        <img src="logo-uri.png" alt="URI Canada" class="brand-logo"> Canada
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Accueil</a>
+        <a href="offres.html">Offres</a>
+        <a href="employeurs.html">Employeurs</a>
+        <a href="portail-temporaires.html">Court terme</a>
+        <a href="matching.html">Matching</a>
+        <a href="mailto:contact@uricanada.ca">contact@uricanada.ca</a>
+      </div>
+      <div>© 2026 URI Canada. Tous droits réservés.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ─── CANDIDATE DATABASE (demo data) ───────────────────────────────────────────
+const CANDIDATES = [
+  {
+    id:1, name:"Karim Mansour", avatar:"👷", secteur:"construction",
+    type:"permanent", exp:8, lang:"bilingual", region:"montreal",
+    competences:["Gestion de chantier","Estimation","AutoCAD","Santé-Sécurité","MS Project"],
+    salaire:[75000,95000], education:"Bac génie civil",
+    scores:{secteur:100,competences:92,experience:88,region:95,disponibilite:85,langue:90,salaire:80,education:85}
+  },
+  {
+    id:2, name:"Priya Sharma", avatar:"💻", secteur:"tech",
+    type:"permanent", exp:5, lang:"bilingual", region:"montreal",
+    competences:["React","Node.js","PostgreSQL","AWS","Docker"],
+    salaire:[85000,110000], education:"Bac informatique",
+    scores:{secteur:100,competences:95,experience:75,region:90,disponibilite:90,langue:95,salaire:70,education:90}
+  },
+  {
+    id:3, name:"Fatou Diallo", avatar:"🏥", secteur:"sante",
+    type:"permanent", exp:3, lang:"fr", region:"montreal",
+    competences:["Soins infirmiers","Triage","Soins critiques","Dossiers électroniques"],
+    salaire:[60000,75000], education:"BAC Sciences infirmières",
+    scores:{secteur:100,competences:80,experience:60,region:85,disponibilite:95,langue:85,salaire:90,education:95}
+  },
+  {
+    id:4, name:"Marco Silva", avatar:"🚛", secteur:"transport",
+    type:"temporaire", exp:12, lang:"fr", region:"montreal",
+    competences:["Permis classe 1","Conduite long-courrier","GPS/LogiRoute","ADR"],
+    salaire:[55000,70000], education:"DEP conduite",
+    scores:{secteur:100,competences:88,experience:100,region:80,disponibilite:70,langue:80,salaire:95,education:75}
+  },
+  {
+    id:5, name:"Yasmine Khalil", avatar:"📊", secteur:"finance",
+    type:"permanent", exp:7, lang:"bilingual", region:"montreal",
+    competences:["CPA","Fiscalité QC","Sage","QuickBooks","Audit"],
+    salaire:[80000,100000], education:"CPA + Bac comptabilité",
+    scores:{secteur:100,competences:90,experience:82,region:88,disponibilite:80,langue:95,salaire:75,education:100}
+  },
+  {
+    id:6, name:"Luca Ferreira", avatar:"🍳", secteur:"restauration",
+    type:"temporaire", exp:4, lang:"fr", region:"montreal",
+    competences:["Cuisine gastronomique","MAPAQ","Brigade","Pâtisserie"],
+    salaire:[45000,60000], education:"DEP cuisine",
+    scores:{secteur:100,competences:75,experience:65,region:90,disponibilite:100,langue:80,salaire:95,education:80}
+  },
+  {
+    id:7, name:"Amara Touré", avatar:"👷", secteur:"construction",
+    type:"international", exp:6, lang:"fr", region:"montreal",
+    competences:["Maçonnerie","Béton","Coffrage","Lecture plans"],
+    salaire:[55000,72000], education:"DEP construction",
+    scores:{secteur:100,competences:82,experience:78,region:70,disponibilite:88,langue:85,salaire:90,education:78}
+  },
+  {
+    id:8, name:"Jin-Ho Park", avatar:"💻", secteur:"tech",
+    type:"international", exp:9, lang:"en", region:"ontario",
+    competences:["Python","Machine Learning","TensorFlow","Data Engineering","Spark"],
+    salaire:[110000,140000], education:"M.Sc. informatique",
+    scores:{secteur:100,competences:98,experience:92,region:65,disponibilite:75,langue:88,salaire:60,education:100}
+  },
+  {
+    id:9, name:"Élodie Bergeron", avatar:"🏥", secteur:"sante",
+    type:"permanent", exp:10, lang:"bilingual", region:"quebec",
+    competences:["Médecine urgence","Gestion d'équipe","ACLS","Télémédecine"],
+    salaire:[120000,160000], education:"MD + spécialité",
+    scores:{secteur:100,competences:96,experience:100,region:78,disponibilite:65,langue:95,salaire:55,education:100}
+  },
+  {
+    id:10, name:"Chen Wei", avatar:"🚛", secteur:"transport",
+    type:"international", exp:2, lang:"en", region:"bc",
+    competences:["Logistique","WMS","Forklift","Gestion inventaire"],
+    salaire:[45000,58000], education:"Diplôme logistique",
+    scores:{secteur:100,competences:70,experience:50,region:55,disponibilite:92,langue:78,salaire:90,education:72}
+  }
+];
+
+const CRITERIA_WEIGHTS = {
+  secteur:0.30, competences:0.25, experience:0.15, region:0.10,
+  disponibilite:0.08, langue:0.07, salaire:0.03, education:0.02
+};
+
+const CRITERIA_LABELS = {
+  secteur:"Secteur/Poste", competences:"Compétences", experience:"Expérience",
+  region:"Région", disponibilite:"Disponibilité", langue:"Langue",
+  salaire:"Rémunération", education:"Éducation"
+};
+
+// Active type toggles
+let activeTypes = new Set(["permanent","temporaire","international"]);
+
+document.querySelectorAll(".tog").forEach(t=>{
+  t.addEventListener("click",()=>{
+    const val=t.dataset.val;
+    if(activeTypes.has(val)){if(activeTypes.size>1){activeTypes.delete(val);t.classList.remove("active");}}
+    else{activeTypes.add(val);t.classList.add("active");}
+  });
+});
+
+// Range labels
+document.getElementById("fExp").addEventListener("input",e=>{document.getElementById("fExpVal").textContent=e.target.value;});
+document.getElementById("fMinScore").addEventListener("input",e=>{document.getElementById("fMinScoreVal").textContent=e.target.value;});
+
+function computeScore(cand, filters){
+  const s=cand.scores;
+  // Secteur penalty if mismatch
+  let secteurScore = s.secteur;
+  if(filters.secteur!=="all" && cand.secteur!==filters.secteur) secteurScore=0;
+  if(secteurScore===0) return 0;
+
+  // Lang penalty
+  let langScore = s.langue;
+  if(filters.lang!=="all"){
+    if(filters.lang==="bilingual" && cand.lang!=="bilingual") langScore=Math.min(langScore,40);
+    else if(filters.lang==="fr" && !["fr","bilingual"].includes(cand.lang)) langScore=Math.min(langScore,30);
+    else if(filters.lang==="en" && !["en","bilingual"].includes(cand.lang)) langScore=Math.min(langScore,30);
+  }
+
+  // Region
+  let regionScore = s.region;
+  if(filters.region!=="all" && cand.region!==filters.region) regionScore=Math.round(regionScore*0.5);
+
+  // Experience penalty
+  let expScore = s.experience;
+  if(cand.exp < filters.minExp) expScore=Math.round(expScore*(cand.exp/Math.max(1,filters.minExp)));
+
+  const total=
+    secteurScore*CRITERIA_WEIGHTS.secteur +
+    s.competences*CRITERIA_WEIGHTS.competences +
+    expScore*CRITERIA_WEIGHTS.experience +
+    regionScore*CRITERIA_WEIGHTS.region +
+    s.disponibilite*CRITERIA_WEIGHTS.disponibilite +
+    langScore*CRITERIA_WEIGHTS.langue +
+    s.salaire*CRITERIA_WEIGHTS.salaire +
+    s.education*CRITERIA_WEIGHTS.education;
+
+  return Math.round(total);
+}
+
+function scoreColor(sc){
+  if(sc>=85) return "#0d9e5b";
+  if(sc>=70) return "#2a7de1";
+  if(sc>=55) return "#c8892a";
+  return "#d9314a";
+}
+
+function buildRing(sc){
+  const r=24,cx=29,cy=29,circ=2*Math.PI*r;
+  const dash=circ*(sc/100);
+  const col=scoreColor(sc);
+  return `<svg width="58" height="58" viewBox="0 0 58 58">
+    <circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="#e5eaf3" stroke-width="5"/>
+    <circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${col}" stroke-width="5"
+      stroke-dasharray="${dash.toFixed(1)} ${circ.toFixed(1)}" stroke-linecap="round"/>
+  </svg>`;
+}
+
+function buildBreakdown(cand,breakdown){
+  return Object.entries(CRITERIA_LABELS).map(([k,lbl])=>{
+    const sc=breakdown[k]||0;
+    const w=(CRITERIA_WEIGHTS[k]*100).toFixed(0);
+    const barColor=scoreColor(sc);
+    return `<div class="breakdown-row">
+      <div class="breakdown-label">${lbl} <span style="color:var(--muted);font-size:11px">(${w}%)</span></div>
+      <div class="breakdown-bar-wrap"><div class="breakdown-bar" style="width:${sc}%;background:${barColor}"></div></div>
+      <div class="breakdown-score">${sc}</div>
+    </div>`;
+  }).join("");
+}
+
+function runMatch(){
+  const filters={
+    secteur: document.getElementById("fSecteur").value,
+    lang: document.getElementById("fLang").value,
+    region: document.getElementById("fRegion").value,
+    minExp: parseInt(document.getElementById("fExp").value)||0,
+    minScore: parseInt(document.getElementById("fMinScore").value)||70
+  };
+
+  const results=CANDIDATES
+    .filter(c=>activeTypes.has(c.type))
+    .map(c=>{
+      const breakdown={...c.scores};
+      // Apply same penalites as computeScore for breakdown display
+      if(filters.secteur!=="all" && c.secteur!==filters.secteur) breakdown.secteur=0;
+      if(filters.lang!=="all"){
+        if(filters.lang==="bilingual" && c.lang!=="bilingual") breakdown.langue=Math.min(breakdown.langue,40);
+        else if(filters.lang==="fr" && !["fr","bilingual"].includes(c.lang)) breakdown.langue=Math.min(breakdown.langue,30);
+        else if(filters.lang==="en" && !["en","bilingual"].includes(c.lang)) breakdown.langue=Math.min(breakdown.langue,30);
+      }
+      if(filters.region!=="all" && c.region!==filters.region) breakdown.region=Math.round(breakdown.region*0.5);
+      if(c.exp < filters.minExp) breakdown.experience=Math.round(breakdown.experience*(c.exp/Math.max(1,filters.minExp)));
+      const score=computeScore(c,filters);
+      return {...c, matchScore:score, breakdown};
+    })
+    .filter(c=>c.matchScore>=filters.minScore)
+    .sort((a,b)=>b.matchScore-a.matchScore);
+
+  const panel=document.getElementById("candidatesPanel");
+  if(!results.length){
+    panel.innerHTML=`<div class="no-results"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#d7deea" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M8 11h6M11 8v6"/></svg>Aucun candidat ne correspond aux critères actuels.<br><span style="font-size:13px">Essayez d'élargir vos filtres ou de réduire le seuil minimum.</span></div>`;
+    document.getElementById("avgScore").textContent="—";
+    document.getElementById("meterFill").style.width="0%";
+    return;
+  }
+
+  const avg=Math.round(results.reduce((s,c)=>s+c.matchScore,0)/results.length);
+  document.getElementById("avgScore").textContent=avg;
+  document.getElementById("meterFill").style.width=avg+"%";
+
+  panel.innerHTML=results.map((c,i)=>{
+    const isTop=c.matchScore>=85;
+    const typeLabel={permanent:"Permanent",temporaire:"Temporaire",international:"International"}[c.type]||c.type;
+    return `<div class="cand-card${isTop?" top-match":""}" id="card${c.id}">
+      ${isTop?`<div class="match-badge">TOP MATCH</div>`:""}
+      <div class="cand-avatar">${c.avatar}</div>
+      <div class="cand-info">
+        <div class="cand-name">${c.name}</div>
+        <div class="cand-meta">${c.education} · ${c.exp} ans exp. · ${typeLabel}</div>
+        <div class="cand-tags">
+          ${c.competences.slice(0,3).map(s=>`<span class="ctag">${s}</span>`).join("")}
+          ${c.competences.length>3?`<span class="ctag">+${c.competences.length-3}</span>`:""}
+        </div>
+        <div class="criteria-breakdown" id="bd${c.id}">
+          ${buildBreakdown(c,c.breakdown)}
+        </div>
+        <button class="expand-btn" onclick="toggleBreakdown(${c.id})">▸ Voir le détail des critères</button>
+      </div>
+      <div class="cand-score-wrap">
+        <div class="score-ring">
+          ${buildRing(c.matchScore)}
+          <div class="score-ring-val" style="color:${scoreColor(c.matchScore)}">${c.matchScore}</div>
+        </div>
+        <div class="score-label-sm">/ 100</div>
+      </div>
+    </div>`;
+  }).join("");
+}
+
+function toggleBreakdown(id){
+  const card=document.getElementById("card"+id);
+  const btn=card.querySelector(".expand-btn");
+  card.classList.toggle("expanded");
+  btn.textContent=card.classList.contains("expanded")?"▾ Masquer le détail":"▸ Voir le détail des critères";
+}
+
+// Auto-run on page load with defaults
+window.addEventListener("DOMContentLoaded",()=>{
+  setTimeout(runMatch,400);
+});
+
+// REVEAL on scroll
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("visible")});
+},{threshold:0.1});
+document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+
+// (Compteur de score % retiré — on n'affiche pas les pourcentages publiquement)
+</script>
+</body>
+</html>

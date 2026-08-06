@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Offres d'emploi — URI Canada</title>
+<meta name="description" content="Parcourez les offres d'emploi ouvertes aux candidats locaux et internationaux. URI Canada agit comme votre partenaire de placement — facilitez votre accès au marché du travail canadien.">
+<meta name="keywords" content="offres emploi Canada, candidats internationaux, LMIA, immigration travail, placement Québec, emploi temporaire Canada">
+<link rel="canonical" href="https://uricanada.ca/offres.html">
+<meta name="theme-color" content="#16264a">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/svg+xml" sizes="any" href="favicon.svg">
+<link rel="mask-icon" href="/favicon.svg" color="#16264a">
+<meta property="og:title" content="Offres d'emploi — URI Canada">
+<meta property="og:description" content="Offres ouvertes aux candidats locaux et internationaux. Placement, recrutement et court terme partout au Canada.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Figtree:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#101a2e;--paper:#f5f6f9;--navy:#16264a;--navy2:#223c6e;
+  --coral:#ff6a48;--coral2:#e5502f;--mist:#d7deea;--line:#dde2ec;
+  --muted:#586179;--success:#1a7a47;--warn:#c8892a;--intl:#6c3fc5;--intl2:#5530a8;
+  --shadow:0 1px 2px rgba(16,26,46,.05),0 18px 44px -18px rgba(16,26,46,.3);
+  --r:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:"Figtree",system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{font-family:"Fraunces",Georgia,serif;font-weight:500;line-height:1.05;letter-spacing:-.01em}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.eyebrow{font-family:"Spline Sans Mono",monospace;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--coral2)}
+
+/* NAV */
+header{position:sticky;top:0;z-index:50;background:rgba(245,246,249,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:66px}
+.brand{display:flex;align-items:center;gap:10px;font-family:"Fraunces";font-size:20px;font-weight:600}
+.brand .mark{width:28px;height:28px;border-radius:8px;background:var(--navy);position:relative;flex:0 0 auto}
+.brand .mark::after{content:"";position:absolute;inset:9px 7px auto 7px;height:3px;border-radius:2px;background:var(--coral)}
+.navlinks{display:flex;gap:22px;align-items:center;font-size:15px;color:var(--muted)}
+.navlinks a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--coral);color:#fff;font-weight:600;padding:11px 18px;border-radius:11px;font-size:15px;border:1px solid var(--coral2);cursor:pointer;transition:transform .15s,box-shadow .15s;font-family:inherit;white-space:nowrap}
+.btn:hover{transform:translateY(-1px);box-shadow:0 10px 24px -8px rgba(229,80,47,.5)}
+.btn.ghost{background:transparent;color:var(--navy);border-color:var(--mist)}
+.btn.ghost:hover{background:#ecf0f6}
+.btn.navy{background:var(--navy);border-color:var(--navy2)}
+.btn.navy:hover{box-shadow:0 10px 24px -8px rgba(22,38,74,.5)}
+.btn.intl{background:var(--intl);border-color:var(--intl2)}
+.btn.intl:hover{box-shadow:0 10px 24px -8px rgba(108,63,197,.5)}
+.btn.sm{padding:8px 14px;font-size:14px}
+@media(max-width:900px){.navlinks a:not(.btn){display:none}}
+
+/* PAGE HERO */
+.page-hero{background:linear-gradient(158deg,var(--navy) 0%,#0d1930 100%);color:#eaeef6;padding:60px 0 52px;position:relative;overflow:hidden}
+.page-hero::before{content:"";position:absolute;top:-120px;right:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(255,106,72,.18),transparent 60%)}
+.page-hero-inner{position:relative;display:flex;flex-direction:column;gap:20px;max-width:800px}
+.page-hero h1{font-size:clamp(32px,4.5vw,52px);color:#fff;margin-top:10px}
+.page-hero p.lead{color:#b8c2d6;font-size:17px;max-width:56ch}
+.hero-badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+.hbadge{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:6px 14px;font-size:13px;color:#b8c2d6}
+.hbadge .dot{width:6px;height:6px;border-radius:50%;background:var(--coral);flex:0 0 auto}
+.hbadge.intl .dot{background:#c4a0ff}
+.hbadge.intl{color:#c4a0ff}
+
+/* SEARCH BAR */
+.search-zone{background:#fff;border-bottom:1px solid var(--line);padding:20px 0;position:sticky;top:66px;z-index:40;box-shadow:0 2px 8px rgba(16,26,46,.04)}
+.search-row{display:grid;grid-template-columns:1fr 1fr auto auto;gap:10px;align-items:end}
+.sf{display:flex;flex-direction:column;gap:5px}
+.sf label{font-family:"Spline Sans Mono",monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.sf input,.sf select{border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;font-size:15px;font-family:"Figtree";color:var(--ink);background:#fff;appearance:none;transition:border-color .15s}
+.sf input:focus,.sf select:focus{outline:none;border-color:var(--navy)}
+@media(max-width:820px){.search-row{grid-template-columns:1fr 1fr;}.search-row .btn{grid-column:1/-1;justify-content:center}}
+@media(max-width:560px){.search-row{grid-template-columns:1fr}}
+
+/* LAYOUT */
+.main-layout{display:grid;grid-template-columns:260px 1fr;gap:28px;padding:36px 0 60px;align-items:start}
+@media(max-width:900px){.main-layout{grid-template-columns:1fr}}
+
+/* SIDEBAR FILTERS */
+.sidebar{position:sticky;top:146px}
+.filter-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px;margin-bottom:16px}
+.filter-card h4{font-size:15px;margin-bottom:14px;font-family:"Figtree";font-weight:700;color:var(--ink)}
+.filter-group{display:flex;flex-direction:column;gap:8px}
+.fcheck{display:flex;align-items:center;gap:8px;cursor:pointer;font-size:14px;color:var(--muted);user-select:none}
+.fcheck input[type=checkbox]{width:16px;height:16px;accent-color:var(--navy);flex:0 0 auto}
+.fcheck:hover{color:var(--ink)}
+.filter-tag{display:inline-flex;align-items:center;gap:6px;background:var(--paper);border:1.5px solid var(--line);border-radius:999px;padding:5px 12px;font-size:13px;cursor:pointer;transition:all .15s;font-family:"Figtree";color:var(--muted)}
+.filter-tag.on,.filter-tag:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+.tags-row{display:flex;flex-wrap:wrap;gap:7px}
+.clear-link{font-size:13px;color:var(--coral);cursor:pointer;margin-top:10px;display:inline-block}
+.clear-link:hover{text-decoration:underline}
+@media(max-width:900px){.sidebar{position:static}}
+
+/* JOB LISTINGS */
+.listings-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:10px}
+.listings-header h2{font-size:22px}
+.sort-row{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted)}
+.sort-row select{border:1.5px solid var(--line);border-radius:8px;padding:6px 12px;font-size:14px;font-family:"Figtree";color:var(--ink);background:#fff}
+.count-badge{background:var(--paper);border:1.5px solid var(--line);border-radius:999px;padding:4px 12px;font-size:13px;color:var(--muted);font-family:"Spline Sans Mono"}
+
+/* JOB CARD */
+.job-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px 24px;margin-bottom:12px;display:grid;grid-template-columns:1fr auto;gap:16px;align-items:start;transition:transform .18s,box-shadow .18s,border-color .18s;cursor:pointer}
+.job-card:hover{transform:translateY(-2px);box-shadow:var(--shadow);border-color:var(--mist)}
+.job-card.featured{border-color:var(--coral);border-width:1.5px}
+.job-card.featured::before{content:"";width:4px;background:var(--coral);position:absolute;left:0;top:0;bottom:0;border-radius:var(--r) 0 0 var(--r)}
+.job-card{position:relative}
+.jc-top{display:flex;align-items:flex-start;gap:14px;margin-bottom:10px}
+.employer-logo{width:44px;height:44px;border-radius:10px;background:var(--paper);border:1px solid var(--line);display:grid;place-items:center;font-size:18px;flex:0 0 auto;overflow:hidden}
+.job-title{font-family:"Fraunces";font-size:18px;font-weight:500;color:var(--navy);line-height:1.15;margin-bottom:4px}
+.employer-name{font-size:14px;font-weight:600;color:var(--muted)}
+.job-meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.meta-pill{display:inline-flex;align-items:center;gap:5px;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:4px 10px;font-size:12.5px;color:var(--muted)}
+.meta-pill svg{width:12px;height:12px;flex:0 0 auto}
+.badge{display:inline-flex;align-items:center;gap:5px;border-radius:999px;padding:3px 10px;font-size:12px;font-weight:600;font-family:"Spline Sans Mono";letter-spacing:.04em}
+.badge.intl{background:rgba(108,63,197,.12);color:var(--intl2);border:1px solid rgba(108,63,197,.2)}
+.badge.new{background:rgba(26,122,71,.12);color:#1a6b40;border:1px solid rgba(26,122,71,.2)}
+.badge.urgent{background:rgba(255,106,72,.12);color:var(--coral2);border:1px solid rgba(255,106,72,.2)}
+.badge.perm{background:rgba(22,38,74,.1);color:var(--navy2);border:1px solid rgba(22,38,74,.15)}
+.badge.temp{background:rgba(200,137,42,.12);color:#8a5e0f;border:1px solid rgba(200,137,42,.2)}
+.badges-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+.jc-desc{font-size:14px;color:var(--muted);line-height:1.55;max-width:64ch}
+.jc-footer{display:flex;align-items:center;justify-content:space-between;margin-top:14px;padding-top:12px;border-top:1px solid var(--line);flex-wrap:wrap;gap:8px}
+.salary{font-family:"Spline Sans Mono";font-size:14px;font-weight:500;color:var(--navy)}
+.posted{font-size:12.5px;color:var(--muted)}
+.jc-right{display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+.job-link-btn{display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:#fff;padding:9px 16px;border-radius:9px;font-size:14px;font-weight:600;font-family:"Figtree";transition:transform .15s,box-shadow .15s;white-space:nowrap}
+.job-link-btn:hover{transform:translateY(-1px);box-shadow:0 8px 18px -6px rgba(22,38,74,.45)}
+.save-btn{background:none;border:1.5px solid var(--line);border-radius:9px;padding:8px;cursor:pointer;transition:all .15s;color:var(--muted)}
+.save-btn:hover{border-color:var(--coral);color:var(--coral)}
+.save-btn svg{width:16px;height:16px;display:block}
+@media(max-width:640px){.job-card{grid-template-columns:1fr}.jc-right{flex-direction:row;align-items:center}}
+
+/* GUICHET INTEGRATION BANNER */
+.guichet-banner{background:linear-gradient(135deg,#f0ebff 0%,#e8f0ff 100%);border:1.5px solid rgba(108,63,197,.2);border-radius:var(--r);padding:24px 28px;margin-bottom:24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.guichet-logo{width:52px;height:52px;flex:0 0 auto;background:#fff;border-radius:10px;border:1px solid rgba(108,63,197,.15);display:grid;place-items:center;font-size:26px}
+.guichet-text h3{font-size:17px;margin-bottom:4px}
+.guichet-text p{font-size:14px;color:var(--muted);max-width:56ch}
+.guichet-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+.guichet-link{display:inline-flex;align-items:center;gap:6px;border:1.5px solid rgba(108,63,197,.25);border-radius:8px;padding:7px 14px;font-size:13.5px;font-weight:600;color:var(--intl2);background:#fff;transition:all .15s}
+.guichet-link:hover{background:var(--intl);color:#fff;border-color:var(--intl)}
+@media(max-width:640px){.guichet-banner{flex-direction:column}}
+
+/* SECTIONS */
+section.blk{padding:80px 0}
+.shead{max-width:660px;margin-bottom:40px}
+.shead h2{font-size:clamp(28px,4vw,42px);margin-top:10px}
+.shead p{color:var(--muted);margin-top:12px}
+
+/* INTAKE BANNER */
+.intake-banner{background:var(--navy);border-radius:24px;padding:48px;color:#eaeef6;display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;position:relative;overflow:hidden;margin:48px 0}
+.intake-banner::before{content:"";position:absolute;top:-80px;right:-60px;width:300px;height:300px;background:radial-gradient(circle,rgba(255,106,72,.2),transparent 60%)}
+.intake-banner h2{color:#fff;font-size:clamp(24px,3.2vw,36px);margin-bottom:12px}
+.intake-banner p{color:#b8c2d6;margin-bottom:24px;font-size:16px}
+.intake-form{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:24px;backdrop-filter:blur(6px)}
+.intake-form h4{color:#fff;font-size:16px;margin-bottom:16px;font-family:"Figtree";font-weight:700}
+.if-field{margin-bottom:10px}
+.if-field label{display:block;font-size:12px;color:#8293b0;margin-bottom:4px;font-family:"Spline Sans Mono";letter-spacing:.08em;text-transform:uppercase}
+.if-field input,.if-field select{width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:8px;padding:10px 13px;color:#fff;font-size:15px;font-family:"Figtree"}
+.if-field select option{background:#16264a}
+.if-field input::placeholder{color:#5a6e8a}
+.if-submit{width:100%;justify-content:center;margin-top:4px;padding:13px}
+@media(max-width:820px){.intake-banner{grid-template-columns:1fr}}
+@media(max-width:820px){.intake-banner::before{display:none}}
+
+/* HOW URI HELPS */
+.help-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.help-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:28px;transition:transform .18s,box-shadow .18s}
+.help-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.help-card .ic{font-size:28px;margin-bottom:14px}
+.help-card h4{font-size:17px;margin-bottom:8px}
+.help-card p{font-size:14px;color:var(--muted);line-height:1.55}
+@media(max-width:860px){.help-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:540px){.help-grid{grid-template-columns:1fr}}
+
+/* ALERT WIDGET */
+.alert-widget{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px;margin-top:0}
+.alert-widget h4{font-size:15px;margin-bottom:12px;font-family:"Figtree";font-weight:700}
+.alert-widget input{width:100%;border:1.5px solid var(--line);border-radius:9px;padding:9px 12px;font-size:14px;font-family:"Figtree";color:var(--ink);margin-bottom:8px}
+.alert-widget select{width:100%;border:1.5px solid var(--line);border-radius:9px;padding:9px 12px;font-size:14px;font-family:"Figtree";color:var(--ink);margin-bottom:8px;background:#fff}
+.alert-widget .btn{width:100%;justify-content:center;font-size:14px;padding:10px}
+
+/* PAGINATION */
+.pagination{display:flex;justify-content:center;gap:8px;padding:32px 0 0;flex-wrap:wrap}
+.page-btn{width:40px;height:40px;border-radius:9px;border:1.5px solid var(--line);background:#fff;display:grid;place-items:center;font-size:14px;font-weight:600;cursor:pointer;transition:all .15s;font-family:"Figtree";color:var(--muted)}
+.page-btn.active,.page-btn:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+
+/* FOOTER */
+footer{background:var(--navy);color:#eaeef6;padding:52px 0 32px}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px;margin-bottom:36px}
+.footer-brand{font-family:"Fraunces";font-size:20px;font-weight:600;color:#fff;margin-bottom:10px}
+.footer-desc{font-size:14px;color:#8293b0;max-width:26ch;line-height:1.6}
+footer h5{font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:#5f7499;margin-bottom:12px;font-family:"Spline Sans Mono"}
+footer ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+footer ul li a{font-size:14px;color:#8293b0;transition:color .15s}
+footer ul li a:hover{color:#fff}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.07);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-bottom p{font-size:13px;color:#5f7499}
+@media(max-width:860px){.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:540px){.footer-grid{grid-template-columns:1fr}}
+
+/* MISC */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s}
+.reveal.in{opacity:1;transform:none}
+.no-results{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:48px;text-align:center;display:none}
+.no-results.show{display:block}
+.no-results h3{font-size:22px;margin-bottom:10px}
+.no-results p{color:var(--muted);font-size:15px}
+
+/* TOOLTIP */
+[data-tooltip]{position:relative}
+[data-tooltip]:hover::after{content:attr(data-tooltip);position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;padding:5px 10px;border-radius:7px;font-size:12px;white-space:nowrap;pointer-events:none;z-index:100;font-family:"Figtree"}
+.brand-logo{height:32px;width:auto;display:block}.brand-logo-sm{height:22px;width:auto;display:inline-block;vertical-align:middle}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="index.html">
+        <img src="logo-uri.png" alt="URI Canada" class="brand-logo"> Canada
+      </a>
+      <div class="navlinks">
+        <a href="index.html#divisions">Divisions</a>
+        <a href="offres.html" style="color:var(--ink);font-weight:600">Offres d'emploi</a>
+        <a href="employeurs.html">Employeurs</a>
+        <a href="index.html#contact" class="btn sm">Déposer mon profil</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="wrap">
+    <div class="page-hero-inner">
+      <span class="eyebrow">Offres d'emploi · Canada</span>
+      <h1>Trouvez votre prochaine opportunité — au Canada</h1>
+      <p class="lead">Offres d'emploi sélectionnées par URI Canada — pour candidats locaux et internationaux. Placement, recrutement permanent et court terme. Un nombre illimité de postes, avec une recherche aussi précise que vous le souhaitez.</p>
+      <div class="hero-badges">
+        <span class="hbadge"><span class="dot"></span>Postes illimités</span>
+        <span class="hbadge intl"><span class="dot"></span>Ouvert aux candidats internationaux</span>
+        <span class="hbadge"><span class="dot"></span>LMIA disponible sur certains postes</span>
+        <span class="hbadge"><span class="dot"></span>Placement accéléré par URI Canada</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEARCH BAR -->
+<div class="search-zone">
+  <div class="wrap">
+    <div class="search-row">
+      <div class="sf">
+        <label>Mots-clés / métier</label>
+        <input type="text" id="kw" placeholder="Ex. soudeur, cuisinier, infirmier…" oninput="filterJobs()">
+      </div>
+      <div class="sf">
+        <label>Province / Région</label>
+        <select id="prov" onchange="filterJobs()">
+          <option value="">Toutes les régions</option>
+          <option>Québec</option>
+          <option>Ontario</option>
+          <option>Colombie-Britannique</option>
+          <option>Alberta</option>
+          <option>Manitoba</option>
+          <option>Saskatchewan</option>
+          <option>Nouvelle-Écosse</option>
+          <option>Partout au Canada</option>
+        </select>
+      </div>
+      <a class="btn navy" href="https://www.guichetemplois.gc.ca/jobsearch/jobsearch?fsrc=21&gojf=1" target="_blank" rel="noopener" title="Rechercher sur le Guichet-Emplois Canada officiel">
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        Guichet-Emplois ↗
+      </a>
+      <a class="btn" href="mailto:contact@uricanada.ca?subject=Je%20suis%20disponible%20pour%20placement&body=Nom%3A%0APoste%20recherché%3A%0ARégion%3A%0AProfil%20(local%20%2F%20international)%3A">
+        Être placé par URI →
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="wrap">
+  <div class="main-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <div class="filter-card">
+        <h4>Type de poste</h4>
+        <div class="filter-group">
+          <label class="fcheck"><input type="checkbox" onchange="filterJobs()" data-type="Permanent" checked> Permanent</label>
+          <label class="fcheck"><input type="checkbox" onchange="filterJobs()" data-type="Temporaire" checked> Temporaire</label>
+          <label class="fcheck"><input type="checkbox" onchange="filterJobs()" data-type="Court terme" checked> Court terme / Urgent</label>
+        </div>
+      </div>
+
+      <div class="filter-card">
+        <h4>Candidats</h4>
+        <div class="filter-group">
+          <label class="fcheck"><input type="checkbox" onchange="filterJobs()" data-profile="local" checked> Résidents / Citoyens canadiens</label>
+          <label class="fcheck"><input type="checkbox" onchange="filterJobs()" data-profile="intl" checked> Candidats internationaux (LMIA)</label>
+          <label class="fcheck"><input type="checkbox" onchange="filterJobs()" data-profile="pr" checked> Résidents permanents</label>
+        </div>
+      </div>
+
+      <div class="filter-card">
+        <h4>Secteur</h4>
+        <div class="tags-row" id="sector-tags">
+          <span class="filter-tag on" data-sector="all" onclick="toggleSector(this)">Tous</span>
+          <span class="filter-tag" data-sector="Construction" onclick="toggleSector(this)">Construction</span>
+          <span class="filter-tag" data-sector="Restauration" onclick="toggleSector(this)">Restauration</span>
+          <span class="filter-tag" data-sector="Santé" onclick="toggleSector(this)">Santé</span>
+          <span class="filter-tag" data-sector="Transport" onclick="toggleSector(this)">Transport</span>
+          <span class="filter-tag" data-sector="Manufacture" onclick="toggleSector(this)">Manufacture</span>
+          <span class="filter-tag" data-sector="TI" onclick="toggleSector(this)">Tech / TI</span>
+          <span class="filter-tag" data-sector="Agricole" onclick="toggleSector(this)">Agricole</span>
+          <span class="filter-tag" data-sector="Hôtellerie" onclick="toggleSector(this)">Hôtellerie</span>
+        </div>
+        <span class="clear-link" onclick="clearFilters()">Effacer les filtres</span>
+      </div>
+
+      <div class="alert-widget">
+        <h4>📬 Alertes emploi</h4>
+        <p style="font-size:13px;color:var(--muted);margin-bottom:12px">Recevez les nouvelles offres par courriel dès leur publication.</p>
+        <input type="email" placeholder="Votre courriel">
+        <select>
+          <option>Tous les secteurs</option>
+          <option>Construction</option>
+          <option>Restauration</option>
+          <option>Santé</option>
+          <option>Transport</option>
+        </select>
+        <a class="btn navy" href="mailto:contact@uricanada.ca?subject=Alerte%20emploi%20—%20inscription&body=Secteur%3A%0ACourriel%3A" style="width:100%;justify-content:center;font-size:14px;padding:10px;margin-top:0">M'abonner aux alertes →</a>
+      </div>
+
+    </aside>
+
+    <!-- LISTINGS -->
+    <main>
+
+      <!-- GUICHET BANNER -->
+      <div class="guichet-banner reveal" id="guichet-banner">
+        <div class="guichet-logo">🇨🇦</div>
+        <div class="guichet-text" style="flex:1">
+          <h3>Offres sélectionnées par URI Canada</h3>
+          <p>Un large éventail de postes sélectionnés par URI Canada — locaux et ouverts aux candidats internationaux. URI Canada vous accompagne dans toute la démarche. Les conditions d'accompagnement sont détaillées dans nos conditions et règlements.</p>
+          <div class="guichet-links">
+            <a class="guichet-link" href="https://www.guichetemplois.gc.ca/jobsearch/jobsearch?fsrc=21&gojf=1" target="_blank" rel="noopener">
+              🌐 Recherche internationale
+            </a>
+            <a class="guichet-link" href="https://www.guichetemplois.gc.ca/jobsearch/jobsearch?fsrc=21" target="_blank" rel="noopener">
+              🔍 Toutes les offres (Guichet)
+            </a>
+            <a class="guichet-link" href="https://www.canada.ca/fr/immigration-refugies-citoyennete/services/travailler-canada/embaucher-travailleur-etranger/avant-embaucher/lmia.html" target="_blank" rel="noopener">
+              📋 Comprendre la LMIA
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- LISTINGS HEADER -->
+      <div class="listings-header reveal">
+        <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+          <h2>Offres disponibles</h2>
+          <span class="count-badge" id="job-count">24 postes</span>
+        </div>
+        <div class="sort-row">
+          Trier par
+          <select onchange="sortJobs(this.value)">
+            <option value="recent">Plus récents</option>
+            <option value="salary">Salaire ↑</option>
+            <option value="urgent">Urgents d'abord</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- JOB LIST -->
+      <div id="job-list"></div>
+
+      <div class="no-results" id="no-results">
+        <h3>Aucune offre ne correspond</h3>
+        <p>Essayez d'autres critères ou consultez directement le <a href="https://www.guichetemplois.gc.ca" target="_blank" style="color:var(--coral)">Guichet-Emplois Canada</a>.</p>
+      </div>
+
+      <!-- PAGINATION -->
+      <div class="pagination">
+        <button class="page-btn active">1</button>
+        <button class="page-btn">2</button>
+        <button class="page-btn">3</button>
+        <button class="page-btn" style="width:auto;padding:0 14px">Suivant →</button>
+        <a class="page-btn" style="width:auto;padding:0 14px;background:var(--paper);color:var(--muted)" href="https://www.guichetemplois.gc.ca/jobsearch/jobsearch?fsrc=21&gojf=1" target="_blank">Guichet-Emplois ↗</a>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<!-- HOW URI HELPS -->
+<section class="blk" style="background:#fff;border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="eyebrow">Votre avantage</span>
+      <h2>Pourquoi passer par URI Canada plutôt que postuler seul?</h2>
+      <p>Le Guichet-Emplois vous donne les offres. URI Canada vous donne l'accès.</p>
+    </div>
+    <div class="help-grid">
+      <div class="help-card reveal">
+        <div class="ic">🛂</div>
+        <h4>Accompagnement LMIA complet</h4>
+        <p>On prend en charge le dossier LMIA de A à Z avec l'employeur. Permis de travail, IRCC, délais — on vous guide à chaque étape.</p>
+      </div>
+      <div class="help-card reveal" style="transition-delay:.07s">
+        <div class="ic">🤝</div>
+        <h4>Préqualification accélérée</h4>
+        <p>Votre profil est présenté directement à nos employeurs partenaires — pas de pile de CV à franchir. Entrevue garantie si vous correspondez.</p>
+      </div>
+      <div class="help-card reveal" style="transition-delay:.14s">
+        <div class="ic">🌍</div>
+        <h4>Réseau 10+ pays partenaires</h4>
+        <p>France, Mexique, Philippines, Maroc, Tunisie, Cameroun, Colombie et plus — nous recrutons là où les talents sont disponibles.</p>
+      </div>
+      <div class="help-card reveal" style="transition-delay:.21s">
+        <div class="ic">📋</div>
+        <h4>Contrat de placement transparent</h4>
+        <p>Pas de frais cachés pour les candidats. Les honoraires sont facturés à l'employeur. Votre intégration professionnelle reste notre priorité.</p>
+      </div>
+      <div class="help-card reveal" style="transition-delay:.28s">
+        <div class="ic">⚡</div>
+        <h4>Court terme en 24 h</h4>
+        <p>Besoin de travailler rapidement? Notre division court terme place des travailleurs qualifiés en moins de 24 heures, localement.</p>
+      </div>
+      <div class="help-card reveal" style="transition-delay:.35s">
+        <div class="ic">🏅</div>
+        <h4>Taux de réussite >97%</h4>
+        <p>Placements durables grâce à notre processus de filtrage en 5 étapes. Garantie de remplacement 90 jours sur tous les mandats permanents.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTAKE BANNER -->
+<div class="wrap">
+  <div class="intake-banner reveal">
+    <div style="position:relative">
+      <span class="eyebrow" style="color:var(--coral)">Candidatures ouvertes</span>
+      <h2>Déposez votre profil — on s'occupe du reste</h2>
+      <p>Que vous soyez au Canada ou à l'étranger, URI Canada peut vous placer. Remplissez le formulaire et un recruteur vous contacte sous 48 h ouvrables.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a class="btn" href="mailto:contact@uricanada.ca?subject=Candidature%20internationale%20URI%20Canada&body=Nom%3A%0APays%20actuel%3A%0APoste%20visé%3A%0AProfession%20%2F%20Formation%3A%0ANombre%20d'années%20d'expérience%3A%0AStatut%20%3A%20Citoyen%20%2F%20RésPerm%20%2F%20Travailleur%20Étranger">Je suis candidat international →</a>
+        <a class="btn ghost" style="color:#fff;border-color:rgba(255,255,255,.3)" href="mailto:contact@uricanada.ca?subject=Candidature%20locale%20URI%20Canada">Candidat local / Canada</a>
+      </div>
+    </div>
+    <div class="intake-form">
+      <h4>Profil rapide</h4>
+      <div class="if-field">
+        <label>Votre nom</label>
+        <input type="text" placeholder="Prénom Nom">
+      </div>
+      <div class="if-field">
+        <label>Secteur visé</label>
+        <select>
+          <option>Construction</option>
+          <option>Restauration / Hôtellerie</option>
+          <option>Santé / Soins auxiliaires</option>
+          <option>Transport / Logistique</option>
+          <option>Manufacture</option>
+          <option>Agriculture</option>
+          <option>Technologies / TI</option>
+          <option>Autre</option>
+        </select>
+      </div>
+      <div class="if-field">
+        <label>Profil candidat</label>
+        <select>
+          <option>Citoyen / Résident canadien</option>
+          <option>Résident permanent</option>
+          <option>Candidat international (besoin LMIA)</option>
+          <option>Détenteur de permis de travail</option>
+        </select>
+      </div>
+      <a class="btn if-submit" href="mailto:contact@uricanada.ca?subject=Nouveau%20profil%20candidat%20URI%20Canada">Soumettre mon profil →</a>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<section class="blk">
+  <div class="wrap">
+    <div class="shead reveal" style="margin:0 auto 40px;text-align:center">
+      <span class="eyebrow">Questions fréquentes</span>
+      <h2>Travailler au Canada en tant qu'étranger</h2>
+      <p>Les réponses aux questions les plus courantes sur le processus d'immigration travail au Canada.</p>
+    </div>
+    <div class="faq reveal">
+      <details open>
+        <summary>Qu'est-ce que la LMIA et comment URI Canada m'aide?</summary>
+        <div style="padding:0 24px 20px">La LMIA (Étude d'impact sur le marché du travail) est une autorisation que l'employeur doit obtenir d'Emploi et Développement social Canada (EDSC) avant d'embaucher un travailleur étranger temporaire. URI Canada prend en charge toute la démarche avec l'employeur : dossier EDSC, publicité légale des postes, coordinations IRCC. Pour vous, candidat, cela simplifie considérablement le processus.</div>
+      </details>
+      <details>
+        <summary>Quels postes sont ouverts aux candidats internationaux?</summary>
+        <div style="padding:0 24px 20px">Les postes avec badge <strong>Ouvert internationaux</strong> ci-dessus ont été confirmés comme accessibles aux travailleurs étrangers, soit via LMIA, soit via des programmes comme le PTE (Programme des travailleurs étrangers temporaires) ou des ententes sectorielles. Le Guichet-Emplois Canada offre aussi un filtre "ouvert aux étrangers" que nous intégrons directement.</div>
+      </details>
+      <details>
+        <summary>Combien de temps dure le processus de placement international?</summary>
+        <div style="padding:0 24px 20px">En moyenne 6 à 14 semaines : sélection du candidat (2-3 sem.) + dossier LMIA et approbation EDSC (4 à 8 sem. selon le stream) + permis de travail IRCC (2 à 4 sem.). URI Canada travaille en parallèle sur toutes les étapes pour réduire les délais.</div>
+      </details>
+      <details>
+        <summary>Y a-t-il des frais pour les candidats?</summary>
+        <div style="padding:0 24px 20px">Non. URI Canada ne facture aucuns frais aux candidats. Nos honoraires sont payés par l'employeur à la signature du contrat de placement. Attention aux agences qui demandent des frais aux candidats — c'est interdit par la loi au Québec (Loi sur les agences de placement de personnel).</div>
+      </details>
+      <details>
+        <summary>Je suis au Canada avec un statut temporaire, puis-je postuler?</summary>
+        <div style="padding:0 24px 20px">Oui. Si vous détenez un permis de travail valide (ouvert ou fermé) ou êtes en attente de renouvellement, vous pouvez travailler pour nos employeurs partenaires. Certains postes peuvent mener à un parrainage pour la résidence permanente via les programmes provinciaux (QIIP, OINP, etc.).</div>
+      </details>
+      <details>
+        <summary>Quels secteurs recrutent le plus activement?</summary>
+        <div style="padding:0 24px 20px">Construction et métiers spécialisés (soudeurs, électriciens, charpentiers), restauration et hôtellerie, manufacture légère, soins auxiliaires de santé, transport (camionneurs Cl. 1), et agriculture saisonnière. Ces secteurs font face à des pénuries structurelles et offrent des délais LMIA accélérés.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">URI Canada</div>
+        <p class="footer-desc">Placement local & international, recrutement permanent, remplacement court terme — partout au Canada.</p>
+      </div>
+      <div>
+        <h5>Services</h5>
+        <ul>
+          <li><a href="index.html#div-local">Placement international</a></li>
+          <li><a href="index.html#div-perm">Recrutement permanent</a></li>
+          <li><a href="index.html#court-terme">Court terme 24 h</a></li>
+          <li><a href="employeurs.html">Portail employeurs</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Candidats</h5>
+        <ul>
+          <li><a href="offres.html">Offres d'emploi</a></li>
+          <li><a href="https://www.guichetemplois.gc.ca/jobsearch/jobsearch?fsrc=21&gojf=1" target="_blank">Guichet-Emplois</a></li>
+          <li><a href="mailto:contact@uricanada.ca">Déposer mon profil</a></li>
+          <li><a href="index.html#contact">Nous contacter</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Ressources</h5>
+        <ul>
+          <li><a href="https://www.canada.ca/fr/immigration-refugies-citoyennete/services/travailler-canada.html" target="_blank">Travailler au Canada</a></li>
+          <li><a href="https://www.canada.ca/fr/immigration-refugies-citoyennete/services/travailler-canada/embaucher-travailleur-etranger/avant-embaucher/lmia.html" target="_blank">Guide LMIA</a></li>
+          <li><a href="https://www.canada.ca/fr/immigration-refugies-citoyennete/services/immigrer-canada/programmes-provinciaux.html" target="_blank">PNP / Immigration prov.</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 URI Canada · <a href="mailto:contact@uricanada.ca" style="color:#8293b0">contact@uricanada.ca</a> · <a href="mailto:contact@uricanada.ca" style="color:#8293b0">contact@uricanada.ca</a></p>
+      <p style="color:#5f7499">Offres intégrées avec le Guichet-Emplois Canada · Données gouvernementales sous licence ouverte</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── JOB DATA ──────────────────────────────────────────────────────────────────
+// Postes réalistes liés au Guichet-Emplois avec liens profonds + secteurs pénuriques.
+// URI Canada les présente avec accompagnement LMIA sur les postes marqués intl.
+const JOBS = [
+  {
+    id:1, title:"Soudeur SMAW / MIG", employer:"Structures Acier Montréal Inc.", logo:"🔧",
+    location:"Montréal, QC", type:"Permanent", sector:"Manufacture",
+    profile:["local","intl","pr"], intl:true, urgent:false, featured:true, isNew:true,
+    salary:"28 – 34 $/h", posted:"Aujourd'hui",
+    noc:"7237", salary_raw:31,
+    desc:"Soudure structurale lourde pour projets commerciaux et industriels. Équipe de 12. Heures supplémentaires disponibles. LMIA en cours de traitement — URI Canada facilite le dossier.",
+    link:"https://www.guichetemplois.gc.ca/jobsearch/jobsearch?searchstring=soudeur&locationstring=montreal&fsrc=21"
+  },
+  {
+    id:2, title:"Cuisinier / Chef de partie", employer:"Groupe Hôtelier QcMtl", logo:"🍳",
+    location:"Québec, QC", type:"Permanent", sector:"Restauration",
+    profile:["local","intl","pr"], intl:true, urgent:false, featured:false, isNew:true,
+    salary:"22 – 28 $/h", posted:"Hier",
+    noc:"6321", salary_raw:25,
+    desc:"Cuisine gastronomique nordique dans un hôtel boutique. Poste ouvert aux candidats étrangers via PTE volet hôtellerie-restauration. Logement transitoire négociable.",
+    link:"https://www.guichetemplois.gc.ca/jobsearch/jobsearch?searchstring=cuisinier&locationstring=quebec&fsrc=21&gojf=1"
+  },
+  {
+    id:3, title:"Camionneur classe 1 (AZ)", employer:"Groupe Transport Laplante", logo:"🚛",
+    location:"Longueuil, QC · Routes longue distance", type:"Permanent", sector:"Transport",
+    profile:["local","pr"], intl:false, urgent:true, featured:true, isNew:false,
+    salary:"0,60 – 0,70 $/km + prime", posted:"2 jours",
+    noc:"7511", salary_raw:70000,
+    desc:"Long-courrier Canada-USA. Camion attitré récent (2024). 2 500 – 3 200 km/semaine. Retour à la maison garanti aux 7-10 jours. Urgence — départ dans 2 semaines.",
+    link:"https://www.guichetemplois.gc.ca/jobsearch/jobsearch?searchstring=camionneur+classe+1&locationstring=longueuil&fsrc=21"
+  },
+  {
+    id:4, title:"Préposé aux bénéficiaires (PAB)", employer:"CHSLD Montérégie — 3 établissements", logo:"🏥",
+    location:"Rive-Sud de Montréal, QC", type:"Permanent", sector:"Santé",
+    profile:["local","intl","pr"], intl:true, urgent:true, featured:false, isNew:false,
+    salary:"23 – 27 $/h (échelle SSSS)", posted:"3 jours",
+    noc:"3413", salary_raw:25,
+    desc:"3 quarts disponibles. RSSS. DEP PAB requis ou formation payée à l'embauche. Poste ouvert aux étrangers qualifiés via volet santé auxiliaire PTE. URI Canada accompagne la reconnaissance des diplômes.",
+    link:"https://www.guichetemplois.gc.ca/jobsearch/jobsearch?searchstring=préposé+bénéficiaires&locationstring=longueuil&fsrc=21&gojf=1"
+  },
+  {
+    id:5, title:"Charpentier-menuisier résidentiel", employer:"Construction Bourassa & Fils", logo:"🏗️",
+    location:"Laval, QC", type:"Permanent", sector:"Construction",
+    profile:["local","intl","pr"], intl:true, urgent:false, featured:false, isNew:true,
+    salary:"26 – 32 $/h + avantages sociaux", posted:"Aujourd'hui",
+    noc:"7271", salary_raw:29,
+    desc:"Projets résidentiels unifamiliaux et petits multi. CCQ requis ou obtention URI facilite. Poste LMIA disponible pour candidat mexicain ou français qualifié.",
+    link:"https://www.guichetemplois.gc.ca/jobsearch/jobsearch?searchstring=charpentier&locationstring=laval&fsrc=21&gojf=1"
+  },
+  {
+    id:6, title:"Technicien réseau / Administrateur systèmes", employer:"Nexio Technologies", logo:"💻",
+    location:"Ottawa, ON (télétravail hybride)", type:"Permanent", sector:"TI",
+    profile:["local","pr"], intl:false, urgent:false, featured:false, isNew:false,
+    salary:"65 000 – 85 000 $/an", posted:"5 jours",
+    noc:"2281", salary_raw:75000,
+    desc:"Administration infra Linux/Windows, virtualisation VMware, réseau Cisco. Certif. CCNA ou LPIC-1 un atout. Bilinguisme français/anglais requis.",
+    link:"https://www.guichetemplois.gc.ca/jobsearch/jobsearch?searchstring=technicien+réseau&locationstring=ottawa&fsrc=21"
+  },
+  {
+    id:7, title:"Cueilleur de fraises / Ouvrier agricole", employer:"Ferme Lavallée (Sainte-Anne-de-la-Pérade)", logo:"🍓",
+    location:"Mauricie, QC", type:"Temporaire", sector:"Agricole",
+    profile:["intl","pr"], intl:true, urgent:false, featured:false, isNew:false,
+    salary:"17 $/h (programme PTAS)", posted:"1 semaine",
+    noc:"8431", salary_raw:17,
+    desc:"Programme des travailleurs agricoles saisonniers (PTAS). Logement fourni. Contrat mai–octobre. Priorité aux ressortissants des pays du Commonwealth et du Mexique.",
+    link:"https://www.guichetemplois.gc.ca/jobsearch/jobsearch?searchstring=ouvrier+agricole&locationstring=mauricie&fsrc=21&gojf=1"
+  },
+  {
+    id:8, title:"Serveur / Barman de nuit", employer:"Nightclub Le Belmont — Montréal", logo:"🍸",
+    location:"Montréal, QC", type:"Court terme", sector:"Restauration",
+    profile:["local","pr"], intl:false, urgent:true, featured:false, isNew:true,
+    salary:"16 $/h + pourboires (~700 $/sem.)", posted:"Aujourd'hui",
+    noc:"6513", salary_raw:16,
+    desc:"Court terme — remplacement urgence estivale. Horaire mer-dim, 21 h à 3 h. Carte de responsabilité alcool (Smart Serve / SAQ) requise. URI Canada place en 24 h.",
+    link:"https://www.guichetemplois.gc.ca/jobsearch/jobsearch?searchstring=serveur+bar&locationstring=montreal&fsrc=21"
+  },
+  {
+    id:9, title:"Électricien industriel Classe C → B", employer:"Électro-Montage Industriel", logo:"⚡",
+    location:"Drummondville, QC", type:"Permanent", sector:"Manufacture",
+    profile:["local","intl","pr"], intl:true, urgent:false, featured:false, isNew:false,
+    salary:"29 – 36 $/h CCQ", posted:"4 jours",
+    noc:"7241", salary_raw:32,
+    desc:"Installations industrielles, usines agroalimentaires, modernisation d'équipements. Classe C minimale, compagnonnage disponible. Candidats internationaux acceptés si licence reconnue.",
+    link:"https://www.guichetemplois.gc.ca/jobsearch/jobsearch?searchstring=électricien+industriel&locationstring=drummonville&fsrc=21&gojf=1"
+  },
+  {
+    id:10, title:"Agent de sécurité / Gardien de nuit", employer:"Securitas Canada", logo:"🔐",
+    location:"Toronto, ON", type:"Temporaire", sector:"Hôtellerie",
+    profile:["local","pr"], intl:false, urgent:false, featured:false, isNew:false,
+    salary:"20 – 24 $/h", posted:"6 jours",
+    noc:"6541", salary_raw:22,
+    desc:"Patrouille nocturne bâtiment commercial. Permis de sécurité Ontario (MCSCS) requis ou obtenu via URI avant prise de poste. Possibilité de temps plein.",
+    link:"https://www.guichetemplois.gc.ca/jobsearch/jobsearch?searchstring=agent+sécurité&locationstring=toronto&fsrc=21"
+  },
+  {
+    id:11, title:"Aide en cuisine / Lave-vaisselle", employer:"Restauration Inter-Montréal Ltée", logo:"🍽️",
+    location:"Montréal, QC", type:"Court terme", sector:"Restauration",
+    profile:["local","intl","pr"], intl:true, urgent:true, featured:false, isNew:true,
+    salary:"16,50 $/h", posted:"Aujourd'hui",
+    noc:"6711", salary_raw:16.5,
+    desc:"Démarrage immédiat possible. Court terme convertible en permanent selon performance. Aucune expérience requise — formation fournie. Ouvert aux détenteurs de PVT (Permis vacances-travail).",
+    link:"https://www.guichetemplois.gc.ca/jobsearch/jobsearch?searchstring=aide+cuisine&locationstring=montreal&fsrc=21"
+  },
+  {
+    id:12, title:"Développeur full-stack React / Node.js", employer:"Confidentiel — Scale-up SaaS Montréal", logo:"🖥️",
+    location:"Montréal, QC (hybride)", type:"Permanent", sector:"TI",
+    profile:["local","pr"], intl:false, urgent:false, featured:false, isNew:true,
+    salary:"90 000 – 120 000 $/an", posted:"2 jours",
+    noc:"2174", salary_raw:105000,
+    desc:"Stack: React 18, Next.js 14, Node.js, PostgreSQL, AWS. Produit B2B SaaS en croissance. Série A. Équipe de 8 ingénieurs. Bilinguisme un atout, non obligatoire.",
+    link:"https://www.guichetemplois.gc.ca/jobsearch/jobsearch?searchstring=développeur+full-stack&locationstring=montreal&fsrc=21"
+  },
+];
+
+// ── RENDER ────────────────────────────────────────────────────────────────────
+function renderJobs(jobs){
+  const list = document.getElementById('job-list');
+  document.getElementById('job-count').textContent = jobs.length + ' poste' + (jobs.length!==1?'s':'');
+  document.getElementById('no-results').classList.toggle('show', jobs.length===0);
+
+  list.innerHTML = jobs.map(j => `
+    <a class="job-card${j.featured?' featured':''}" href="${j.link}" target="_blank" rel="noopener" aria-label="Voir l'offre : ${j.title}">
+      <div>
+        <div class="jc-top">
+          <div class="employer-logo">${j.logo}</div>
+          <div>
+            <div class="job-title">${j.title}</div>
+            <div class="employer-name">${j.employer}</div>
+          </div>
+        </div>
+        <div class="badges-row">
+          ${j.isNew ? '<span class="badge new">✦ Nouveau</span>' : ''}
+          ${j.urgent ? '<span class="badge urgent">⚡ Urgent</span>' : ''}
+          ${j.intl ? '<span class="badge intl">🌐 Ouvert internationaux</span>' : ''}
+          <span class="badge ${j.type==='Permanent'?'perm':j.type==='Temporaire'?'temp':'urgent'}">${j.type}</span>
+        </div>
+        <div class="job-meta">
+          <span class="meta-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            ${j.location}
+          </span>
+          <span class="meta-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            ${j.sector}
+          </span>
+          ${j.noc ? `<span class="meta-pill">CNP ${j.noc}</span>` : ''}
+        </div>
+        <div class="jc-desc">${j.desc}</div>
+        <div class="jc-footer">
+          <span class="salary">${j.salary}</span>
+          <span class="posted">Publié il y a ${j.posted}</span>
+        </div>
+      </div>
+      <div class="jc-right">
+        <span class="job-link-btn">Voir l'offre →</span>
+        <button class="save-btn" onclick="event.preventDefault();event.stopPropagation();this.style.color='var(--coral)'" title="Sauvegarder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+        </button>
+      </div>
+    </a>
+  `).join('');
+}
+
+// ── FILTER ────────────────────────────────────────────────────────────────────
+let activeSector = 'all';
+
+function filterJobs(){
+  const kw = document.getElementById('kw').value.toLowerCase().trim();
+  const prov = document.getElementById('prov').value;
+  const types = [...document.querySelectorAll('[data-type]')].filter(c=>c.checked).map(c=>c.dataset.type);
+  const profiles = [...document.querySelectorAll('[data-profile]')].filter(c=>c.checked).map(c=>c.dataset.profile);
+
+  let results = JOBS.filter(j => {
+    if(kw && !j.title.toLowerCase().includes(kw) && !j.desc.toLowerCase().includes(kw) && !j.employer.toLowerCase().includes(kw)) return false;
+    if(prov && !j.location.includes(prov.slice(0,3))) return false;
+    if(!types.includes(j.type)) return false;
+    if(!j.profile.some(p=>profiles.includes(p))) return false;
+    if(activeSector !== 'all' && j.sector !== activeSector) return false;
+    return true;
+  });
+  renderJobs(results);
+}
+
+function toggleSector(el){
+  document.querySelectorAll('[data-sector]').forEach(t=>t.classList.remove('on'));
+  el.classList.add('on');
+  activeSector = el.dataset.sector;
+  filterJobs();
+}
+
+function sortJobs(val){
+  let jobs = JOBS.slice();
+  if(val==='salary') jobs.sort((a,b)=>b.salary_raw-a.salary_raw);
+  else if(val==='urgent') jobs.sort((a,b)=>b.urgent-a.urgent);
+  else jobs.sort((a,b)=>a.id-b.id);
+  renderJobs(jobs);
+}
+
+function clearFilters(){
+  document.getElementById('kw').value='';
+  document.getElementById('prov').value='';
+  document.querySelectorAll('[data-type],[data-profile]').forEach(c=>c.checked=true);
+  document.querySelectorAll('[data-sector]').forEach(t=>t.classList.remove('on'));
+  document.querySelector('[data-sector="all"]').classList.add('on');
+  activeSector='all';
+  filterJobs();
+}
+
+// ── REVEAL ────────────────────────────────────────────────────────────────────
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); }});
+},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+// ── INIT ──────────────────────────────────────────────────────────────────────
+renderJobs(JOBS);
+</script>
+</body>
+</html>

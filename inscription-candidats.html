@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rejoindre le réseau URI Canada — Inscription candidats</title>
+<meta name="description" content="Inscrivez-vous au réseau URI Canada. Candidats locaux et internationaux : déposez votre dossier et acceptez d'être représenté(e) par notre équipe de recruteurs. Gratuit pour les candidats.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="canonical" href="https://uricanada.ca/inscription-candidats.html">
+<meta name="theme-color" content="#16264a">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta property="og:title" content="Rejoindre le réseau URI Canada">
+<meta property="og:description" content="Candidats locaux et internationaux : inscrivez-vous gratuitement et laissez nos recruteurs vous placer.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Figtree:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#101a2e;--paper:#f5f6f9;--navy:#16264a;--navy2:#223c6e;
+  --coral:#ff6a48;--coral2:#e5502f;--mist:#d7deea;--line:#dde2ec;
+  --muted:#586179;--success:#1a7a47;--warn:#c8892a;--green:#16a34a;
+  --shadow:0 1px 2px rgba(16,26,46,.05),0 18px 44px -18px rgba(16,26,46,.3);
+  --r:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:"Figtree",system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{font-family:"Fraunces",Georgia,serif;font-weight:500;line-height:1.05;letter-spacing:-.01em}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+.eyebrow{font-family:"Spline Sans Mono",monospace;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--coral2)}
+
+/* SCROLL PROGRESS */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--coral);z-index:999;transition:width .1s linear}
+
+/* NAV */
+header{position:sticky;top:0;z-index:50;background:rgba(245,246,249,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:66px}
+.brand{display:flex;align-items:center;gap:10px;font-family:"Fraunces";font-size:20px;font-weight:600}
+.brand .mark{width:28px;height:28px;border-radius:8px;background:var(--navy);position:relative;flex:0 0 auto}
+.brand .mark::after{content:"";position:absolute;inset:9px 7px auto 7px;height:3px;border-radius:2px;background:var(--coral)}
+.navlinks{display:flex;gap:22px;align-items:center;font-size:15px;color:var(--muted)}
+.navlinks a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--coral);color:#fff;font-weight:600;padding:12px 20px;border-radius:11px;font-size:15px;border:1px solid var(--coral2);cursor:pointer;transition:transform .15s,box-shadow .15s;font-family:inherit;white-space:nowrap}
+.btn:hover{transform:translateY(-1px);box-shadow:0 10px 24px -8px rgba(229,80,47,.5)}
+.btn.ghost{background:transparent;color:var(--navy);border-color:var(--mist)}
+.btn.ghost:hover{background:#ecf0f6}
+.btn.navy{background:var(--navy);border-color:var(--navy2)}
+.btn.navy:hover{box-shadow:0 10px 24px -8px rgba(22,38,74,.5)}
+.btn.sm{padding:9px 15px;font-size:14px}
+.btn.lg{padding:16px 28px;font-size:17px;border-radius:13px}
+@media(max-width:900px){.navlinks a:not(.btn){display:none}}
+@media(max-width:600px){.navlinks .btn{padding:10px 14px;font-size:14px}}
+
+/* HERO */
+.hero{background:linear-gradient(158deg,var(--navy) 0%,#0d1930 100%);color:#eaeef6;padding:72px 0 64px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-160px;right:-120px;width:480px;height:480px;background:radial-gradient(circle,rgba(255,106,72,.22),transparent 62%)}
+.hero-inner{max-width:760px}
+.hero .eyebrow{color:var(--coral);margin-bottom:16px;display:block}
+.hero h1{font-size:clamp(36px,5vw,60px);color:#fff;max-width:20ch;margin-bottom:18px}
+.hero p.lead{font-size:18px;color:#b8c2d6;max-width:52ch;margin-bottom:32px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:32px}
+.trust-row{display:flex;gap:18px;flex-wrap:wrap}
+.trust-chip{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:7px 15px;font-size:13px;color:#b8c2d6}
+.trust-chip .dot{width:6px;height:6px;border-radius:50%;background:#22c55e;flex:0 0 auto}
+
+/* PATHS */
+.blk{padding:72px 0}
+.shead{text-align:center;margin-bottom:52px}
+.shead h2{font-size:clamp(28px,3.5vw,42px);margin-top:10px}
+.shead p{color:var(--muted);margin-top:12px;max-width:56ch;margin-left:auto;margin-right:auto}
+.paths{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.path-card{border-radius:22px;padding:36px;position:relative;overflow:hidden}
+.path-card.local{background:#fff;border:1.5px solid var(--line)}
+.path-card.intl{background:var(--navy);color:#eaeef6}
+.path-card h3{font-size:26px;margin-bottom:10px}
+.path-card.intl h3{color:#fff}
+.path-card.local h3{color:var(--navy)}
+.path-card p{font-size:16px;margin-bottom:22px}
+.path-card.intl p{color:#b8c2d6}
+.path-card.local p{color:var(--muted)}
+.path-list{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:28px}
+.path-list li{display:flex;align-items:flex-start;gap:10px;font-size:15px}
+.path-card.intl .path-list li{color:#b8c2d6}
+.path-card.intl .path-list li::before{content:"→";color:var(--coral);flex:0 0 auto}
+.path-card.local .path-list li{color:var(--muted)}
+.path-card.local .path-list li::before{content:"→";color:var(--navy2);flex:0 0 auto}
+.path-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(34,198,94,.15);border:1px solid rgba(34,198,94,.3);color:#15803d;border-radius:999px;padding:5px 12px;font-size:13px;font-weight:600;margin-bottom:18px}
+.path-badge.intl-badge{background:rgba(255,106,72,.15);border-color:rgba(255,106,72,.3);color:var(--coral)}
+@media(max-width:740px){.paths{grid-template-columns:1fr}}
+
+/* PROCESS STEPS */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;counter-reset:step}
+.step{background:#fff;border:1px solid var(--line);border-radius:18px;padding:28px;position:relative;counter-increment:step}
+.step::before{content:counter(step,"0"counter(step));font-family:"Fraunces";font-size:38px;color:var(--line);line-height:1;display:block;margin-bottom:12px}
+.step h4{font-size:17px;color:var(--navy);margin-bottom:8px}
+.step p{font-size:14px;color:var(--muted)}
+@media(max-width:860px){.steps{grid-template-columns:1fr 1fr}}
+@media(max-width:540px){.steps{grid-template-columns:1fr}}
+
+/* AVANTAGES */
+.avantages{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.av-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px}
+.av-ic{font-size:28px;margin-bottom:12px}
+.av-card h4{font-size:17px;color:var(--navy);margin-bottom:8px}
+.av-card p{font-size:14px;color:var(--muted)}
+@media(max-width:860px){.avantages{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.avantages{grid-template-columns:1fr}}
+
+/* FORM */
+.form-wrap{background:#fff;border:1.5px solid var(--line);border-radius:24px;padding:48px 44px;max-width:860px;margin:0 auto;box-shadow:var(--shadow)}
+.form-section{margin-bottom:36px}
+.form-section-label{font-family:"Fraunces";font-size:19px;color:var(--navy);margin-bottom:20px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.form-group{display:flex;flex-direction:column;gap:6px}
+.form-group.full{grid-column:1/-1}
+.form-group label{font-size:14px;font-weight:600;color:var(--navy)}
+.form-group label .req{color:var(--coral);margin-left:3px}
+.form-group input,.form-group select,.form-group textarea{border:1.5px solid var(--line);border-radius:10px;padding:11px 14px;font-size:15px;font-family:inherit;color:var(--ink);background:#fafbfc;transition:border-color .2s,box-shadow .2s;outline:none}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--navy);box-shadow:0 0 0 3px rgba(22,38,74,.08)}
+.form-group textarea{resize:vertical;min-height:90px}
+.form-group .hint{font-size:12.5px;color:var(--muted)}
+.radio-group,.check-group{display:flex;flex-direction:column;gap:10px}
+.radio-row,.check-row{display:flex;align-items:center;gap:10px;cursor:pointer;font-size:15px}
+.radio-row input[type=radio],.check-row input[type=checkbox]{width:18px;height:18px;accent-color:var(--navy);cursor:pointer;flex:0 0 auto}
+.checkboxes{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+@media(max-width:640px){.form-grid{grid-template-columns:1fr}.checkboxes{grid-template-columns:1fr}}
+
+/* TYPE TOGGLE */
+.type-tabs{display:flex;gap:12px;margin-bottom:32px;flex-wrap:wrap}
+.type-tab{flex:1;min-width:140px;padding:16px;border-radius:14px;border:2px solid var(--line);cursor:pointer;text-align:center;transition:border-color .2s,background .2s;font-family:"Fraunces";font-size:17px;color:var(--muted);background:#fff}
+.type-tab .tab-ic{font-size:28px;display:block;margin-bottom:6px}
+.type-tab .tab-sub{font-family:"Figtree";font-size:13px;color:var(--muted)}
+.type-tab.active{border-color:var(--navy);background:#f0f3f9;color:var(--navy)}
+.type-tab.active .tab-sub{color:var(--navy2)}
+
+/* CONSENT */
+.consent-box{background:#f0f3f9;border:1.5px solid var(--mist);border-radius:14px;padding:24px}
+.consent-box h4{font-size:16px;color:var(--navy);margin-bottom:12px}
+.consent-box p{font-size:14px;color:var(--muted);margin-bottom:14px}
+.consent-check{display:flex;align-items:flex-start;gap:12px;font-size:14px;cursor:pointer}
+.consent-check input{width:18px;height:18px;accent-color:var(--navy);flex:0 0 auto;margin-top:2px;cursor:pointer}
+
+/* SUBMIT */
+.form-submit{text-align:center;padding-top:10px}
+.form-submit .note{font-size:13px;color:var(--muted);margin-top:14px}
+
+/* FAQ */
+details{background:#fff;border:1px solid var(--line);border-radius:14px;margin-bottom:10px;overflow:hidden}
+summary{cursor:pointer;padding:18px 22px;font-weight:600;font-size:16px;color:var(--navy);list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+summary::after{content:"↓";color:var(--coral);transition:transform .3s;flex:0 0 auto}
+details[open] summary::after{transform:rotate(180deg)}
+.faq-body{padding:0 22px 18px;font-size:15px;color:var(--muted)}
+
+/* FOOTER */
+footer{background:var(--navy);color:#b8c2d6;padding:48px 0 28px}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:36px}
+.foot-brand{font-family:"Fraunces";font-size:18px;color:#fff;margin-bottom:10px}
+.foot-brand p{font-family:"Figtree";font-size:14px;color:#b8c2d6}
+footer h5{font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:#fff;margin-bottom:14px;font-family:"Spline Sans Mono",monospace}
+footer ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+footer ul li a{font-size:14px;color:#b8c2d6;transition:color .2s}
+footer ul li a:hover{color:#fff}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;font-size:13px}
+@media(max-width:860px){.foot-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.foot-grid{grid-template-columns:1fr}}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* SUCCESS */
+#successMsg{display:none;background:#f0fdf4;border:1.5px solid #86efac;border-radius:16px;padding:32px;text-align:center;margin-top:24px}
+#successMsg h3{color:#15803d;font-size:22px;margin-bottom:10px}
+#successMsg p{color:#166534;font-size:15px}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+
+<!-- NAV -->
+<header>
+  <div class="wrap">
+    <nav>
+      <a href="index.html" class="brand">
+        <div class="mark"></div>
+        URI Canada
+      </a>
+      <div class="navlinks">
+        <a href="index.html#divisions">Divisions</a>
+        <a href="offres.html">Offres d'emploi</a>
+        <a href="employeurs.html">Employeurs</a>
+        <a href="index.html#contact" class="btn">Parlez-nous</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-inner">
+      <span class="eyebrow">Réseau URI Canada — Gratuit pour les candidats</span>
+      <h1>Le bon emploi commence par un bon représentant</h1>
+      <p class="lead">Déposez votre dossier et autorisez URI Canada à vous représenter. Nos recruteurs travaillent pour vous — pas pour vous facturer.</p>
+      <div class="hero-cta">
+        <a class="btn lg" href="#inscription">M'inscrire maintenant — c'est gratuit</a>
+        <a class="btn lg ghost" href="offres.html" style="color:#fff;border-color:rgba(255,255,255,.3)">Voir les offres disponibles</a>
+      </div>
+      <div class="trust-row">
+        <span class="trust-chip"><span class="dot"></span> 0 $ pour les candidats</span>
+        <span class="trust-chip"><span class="dot"></span> Locaux &amp; internationaux</span>
+        <span class="trust-chip"><span class="dot"></span> Matching en 48 h</span>
+        <span class="trust-chip"><span class="dot"></span> Accompagnement LMIA si requis</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEUX PORTES -->
+<section class="blk" style="background:#fff">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="eyebrow">Qui peut s'inscrire</span>
+      <h2>Deux profils, un seul réseau</h2>
+      <p>Que vous soyez au Québec, au Canada ou à l'autre bout du monde, on a une porte pour vous.</p>
+    </div>
+    <div class="paths reveal">
+      <div class="path-card local">
+        <span class="path-badge">🇨🇦 Candidats locaux</span>
+        <h3>Déjà au Canada</h3>
+        <p>Citoyens, résidents permanents, titulaires d'un permis de travail ou d'un permis vacances-travail (PVT).</p>
+        <ul class="path-list">
+          <li>Placement permanent dans votre secteur</li>
+          <li>Court terme et remplacement rapide (&lt; 48 h)</li>
+          <li>Transition de carrière guidée</li>
+          <li>Accès aux offres exclusives (non affichées)</li>
+          <li>Suivi personnalisé pendant 90 jours post-placement</li>
+        </ul>
+        <a class="btn navy" href="#inscription" onclick="selectType('local')">Ouvrir mon dossier — local →</a>
+      </div>
+      <div class="path-card intl">
+        <span class="path-badge intl-badge">🌍 Candidats internationaux</span>
+        <h3>À l'étranger</h3>
+        <p>Vous êtes hors Canada et souhaitez être placé(e) par un employeur canadien avec support LMIA/permis.</p>
+        <ul class="path-list">
+          <li>Identification d'un employeur prêt à parrainer</li>
+          <li>Accompagnement complet LMIA + IRCC</li>
+          <li>Support logistique à l'arrivée (logement, orientation)</li>
+          <li>Secteurs en pénurie priorisés (construction, soins, IT)</li>
+          <li>Reconnaissance des équivalences professionnelles</li>
+        </ul>
+        <a class="btn" href="#inscription" onclick="selectType('international')">Ouvrir mon dossier — international →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="blk" style="background:var(--paper)">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="eyebrow">Comment ça marche</span>
+      <h2>4 étapes, du dossier au placement</h2>
+    </div>
+    <div class="steps reveal">
+      <div class="step">
+        <h4>Vous vous inscrivez</h4>
+        <p>Remplissez ce formulaire en 5 minutes. Votre dossier est créé dans notre CRM et assigné à un recruteur de votre secteur.</p>
+      </div>
+      <div class="step">
+        <h4>Analyse &amp; matching</h4>
+        <p>Notre algorithme sur 8 critères calcule votre score de compatibilité avec les mandats ouverts chez nos entreprises clientes.</p>
+      </div>
+      <div class="step">
+        <h4>Entretien préliminaire</h4>
+        <p>Un recruteur URI Canada vous contacte dans les 48 h pour valider votre profil, votre disponibilité et vos attentes salariales.</p>
+      </div>
+      <div class="step">
+        <h4>Présentation &amp; placement</h4>
+        <p>Vous rencontrez 1 à 3 employeurs présélectionnés. On négocie pour vous. Placement confirmé — on reste avec vous 90 jours.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AVANTAGES -->
+<section class="blk" style="background:#fff">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="eyebrow">Pourquoi nous choisir</span>
+      <h2>Être représenté(e) par URI Canada, ça change tout</h2>
+    </div>
+    <div class="avantages reveal">
+      <div class="av-card">
+        <div class="av-ic">💰</div>
+        <h4>Toujours gratuit pour les candidats</h4>
+        <p>Nos honoraires sont payés par les employeurs. Vous ne déboursez jamais un seul dollar pour accéder à notre réseau.</p>
+      </div>
+      <div class="av-card">
+        <div class="av-ic">🎯</div>
+        <h4>Matching algorithmique &gt;97 %</h4>
+        <p>8 critères pondérés (compétences, secteur, salaire, disponibilité, lieu, statut) pour vous présenter uniquement là où vous avez une vraie chance.</p>
+      </div>
+      <div class="av-card">
+        <div class="av-ic">🔒</div>
+        <h4>Vos informations restent privées</h4>
+        <p>Votre CV n'est jamais transmis sans votre accord explicite. Vous approuvez chaque entreprise avant qu'on partage votre dossier.</p>
+      </div>
+      <div class="av-card">
+        <div class="av-ic">🌐</div>
+        <h4>Offres exclusives non affichées</h4>
+        <p>Plus de 60 % de nos mandats ne sont jamais publiés sur les job boards. Seuls les candidats de notre réseau y ont accès.</p>
+      </div>
+      <div class="av-card">
+        <div class="av-ic">✈️</div>
+        <h4>Support LMIA &amp; immigration</h4>
+        <p>Pour les candidats internationaux, on coordonne avec l'employeur pour l'EIMT/LMIA et le permis de travail IRCC de A à Z.</p>
+      </div>
+      <div class="av-card">
+        <div class="av-ic">🤝</div>
+        <h4>Accompagnement 90 jours</h4>
+        <p>Une fois placé(e), votre recruteur reste disponible 90 jours pour s'assurer que l'intégration se passe bien — pour vous et l'employeur.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMULAIRE D'INSCRIPTION -->
+<section class="blk" id="inscription" style="background:var(--paper)">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="eyebrow">Dossier candidat</span>
+      <h2>Je souhaite être représenté(e) par URI Canada</h2>
+      <p>Remplissez ce formulaire. Un recruteur vous contacte dans les 48 h ouvrables.</p>
+    </div>
+
+    <div class="form-wrap reveal">
+      <!-- TYPE TOGGLE -->
+      <div style="margin-bottom:32px">
+        <p style="font-weight:600;color:var(--navy);margin-bottom:14px">Je suis un candidat…</p>
+        <div class="type-tabs">
+          <div class="type-tab" id="tab-local" onclick="selectType('local')">
+            <span class="tab-ic">🇨🇦</span>
+            Local (au Canada)
+            <span class="tab-sub">Citoyen · RP · Permis travail · PVT</span>
+          </div>
+          <div class="type-tab" id="tab-international" onclick="selectType('international')">
+            <span class="tab-ic">🌍</span>
+            International (hors Canada)
+            <span class="tab-sub">À l'étranger · Souhait d'immigrer</span>
+          </div>
+        </div>
+      </div>
+
+      <form id="inscriptionForm" novalidate>
+        <!-- INFORMATIONS PERSONNELLES -->
+        <div class="form-section">
+          <div class="form-section-label">01 — Informations personnelles</div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Prénom <span class="req">*</span></label>
+              <input type="text" name="prenom" placeholder="Marie" required>
+            </div>
+            <div class="form-group">
+              <label>Nom <span class="req">*</span></label>
+              <input type="text" name="nom" placeholder="Tremblay" required>
+            </div>
+            <div class="form-group">
+              <label>Courriel <span class="req">*</span></label>
+              <input type="email" name="email" placeholder="marie@exemple.com" required>
+            </div>
+            <div class="form-group">
+              <label>Téléphone / WhatsApp</label>
+              <input type="tel" name="telephone" placeholder="+1 514 555-0100">
+              <span class="hint">Inclure indicatif pays si hors Canada</span>
+            </div>
+            <div class="form-group">
+              <label>Ville actuelle <span class="req">*</span></label>
+              <input type="text" name="ville" placeholder="Montréal" required>
+            </div>
+            <div class="form-group">
+              <label>Pays actuel <span class="req">*</span></label>
+              <select name="pays" required>
+                <option value="">— Sélectionner —</option>
+                <option value="CA-QC">Canada — Québec</option>
+                <option value="CA-ON">Canada — Ontario</option>
+                <option value="CA-AB">Canada — Alberta</option>
+                <option value="CA-BC">Canada — Colombie-Britannique</option>
+                <option value="CA-autre">Canada — Autre province</option>
+                <option value="DZ">Algérie</option>
+                <option value="BE">Belgique</option>
+                <option value="BR">Brésil</option>
+                <option value="CM">Cameroun</option>
+                <option value="CI">Côte d'Ivoire</option>
+                <option value="FR">France</option>
+                <option value="GH">Ghana</option>
+                <option value="IN">Inde</option>
+                <option value="LB">Liban</option>
+                <option value="MA">Maroc</option>
+                <option value="MX">Mexique</option>
+                <option value="NG">Nigeria</option>
+                <option value="PH">Philippines</option>
+                <option value="SN">Sénégal</option>
+                <option value="TN">Tunisie</option>
+                <option value="autre">Autre pays</option>
+              </select>
+            </div>
+
+            <!-- CHAMPS LOCAUX -->
+            <div class="form-group full" id="statutSection" style="display:none">
+              <label>Statut au Canada <span class="req">*</span></label>
+              <div class="radio-group">
+                <label class="radio-row"><input type="radio" name="statut" value="citoyen"> Citoyen(ne) canadien(ne)</label>
+                <label class="radio-row"><input type="radio" name="statut" value="rp"> Résident(e) permanent(e)</label>
+                <label class="radio-row"><input type="radio" name="statut" value="permis-travail"> Titulaire d'un permis de travail</label>
+                <label class="radio-row"><input type="radio" name="statut" value="pvt"> Permis vacances-travail (PVT)</label>
+                <label class="radio-row"><input type="radio" name="statut" value="etudiant-permis"> Permis études (avec autorisation travail)</label>
+                <label class="radio-row"><input type="radio" name="statut" value="autre-statut"> Autre statut</label>
+              </div>
+            </div>
+
+            <!-- CHAMPS INTERNATIONAUX -->
+            <div class="form-group full" id="paysOrigineSection" style="display:none">
+              <label>Pays de résidence actuel</label>
+              <input type="text" name="paysOrigine" placeholder="ex. Maroc">
+            </div>
+            <div class="form-group full" id="nationaliteSection" style="display:none">
+              <label>Nationalité</label>
+              <input type="text" name="nationalite" placeholder="ex. Marocain(e), Sénégalais(e)">
+            </div>
+          </div>
+        </div>
+
+        <!-- PROFIL PROFESSIONNEL -->
+        <div class="form-section">
+          <div class="form-section-label">02 — Profil professionnel</div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Titre de poste actuel / dernier poste <span class="req">*</span></label>
+              <input type="text" name="titrePoste" placeholder="ex. Électricien industriel, Infirmière, Développeur Python" required>
+            </div>
+            <div class="form-group">
+              <label>Années d'expérience <span class="req">*</span></label>
+              <select name="experience" required>
+                <option value="">— Sélectionner —</option>
+                <option value="0-1">Moins de 1 an (débutant)</option>
+                <option value="1-3">1 à 3 ans</option>
+                <option value="3-5">3 à 5 ans</option>
+                <option value="5-10">5 à 10 ans</option>
+                <option value="10+">10 ans et plus</option>
+              </select>
+            </div>
+            <div class="form-group full">
+              <label>Secteur(s) d'activité <span class="req">*</span></label>
+              <div class="checkboxes">
+                <label class="check-row"><input type="checkbox" name="secteurs" value="construction"> Construction &amp; génie civil</label>
+                <label class="check-row"><input type="checkbox" name="secteurs" value="manufacturing"> Fabrication &amp; production</label>
+                <label class="check-row"><input type="checkbox" name="secteurs" value="sante"> Santé &amp; services sociaux</label>
+                <label class="check-row"><input type="checkbox" name="secteurs" value="it"> Technologies de l'information</label>
+                <label class="check-row"><input type="checkbox" name="secteurs" value="finance"> Finance &amp; comptabilité</label>
+                <label class="check-row"><input type="checkbox" name="secteurs" value="transport"> Transport &amp; logistique</label>
+                <label class="check-row"><input type="checkbox" name="secteurs" value="hotellerie"> Hôtellerie &amp; restauration</label>
+                <label class="check-row"><input type="checkbox" name="secteurs" value="agriculture"> Agriculture &amp; agroalimentaire</label>
+                <label class="check-row"><input type="checkbox" name="secteurs" value="commerce"> Commerce &amp; vente au détail</label>
+                <label class="check-row"><input type="checkbox" name="secteurs" value="education"> Éducation &amp; formation</label>
+                <label class="check-row"><input type="checkbox" name="secteurs" value="administration"> Administration &amp; ressources humaines</label>
+                <label class="check-row"><input type="checkbox" name="secteurs" value="autre-secteur"> Autre secteur</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Niveau de scolarité</label>
+              <select name="scolarite">
+                <option value="">— Sélectionner —</option>
+                <option value="sec">Diplôme d'études secondaires (DES)</option>
+                <option value="dep">DEP / Attestation professionnelle</option>
+                <option value="college">DEC / Cégep</option>
+                <option value="bac">Baccalauréat / Licence</option>
+                <option value="maitrise">Maîtrise / Master</option>
+                <option value="doctorat">Doctorat</option>
+                <option value="auto">Formation autodidacte / certifications</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Langues parlées</label>
+              <div class="check-group" style="flex-direction:row;flex-wrap:wrap;gap:14px">
+                <label class="check-row"><input type="checkbox" name="langues" value="fr" checked> Français</label>
+                <label class="check-row"><input type="checkbox" name="langues" value="en"> Anglais</label>
+                <label class="check-row"><input type="checkbox" name="langues" value="ar"> Arabe</label>
+                <label class="check-row"><input type="checkbox" name="langues" value="es"> Espagnol</label>
+                <label class="check-row"><input type="checkbox" name="langues" value="pt"> Portugais</label>
+                <label class="check-row"><input type="checkbox" name="langues" value="autre-langue"> Autre</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TYPE DE PLACEMENT -->
+        <div class="form-section">
+          <div class="form-section-label">03 — Type de placement recherché</div>
+          <div class="form-grid">
+            <div class="form-group full">
+              <label>Type(s) de placement souhaité(s) <span class="req">*</span></label>
+              <div class="check-group">
+                <label class="check-row"><input type="checkbox" name="typePlacement" value="permanent"> Emploi permanent à temps plein</label>
+                <label class="check-row"><input type="checkbox" name="typePlacement" value="court-terme"> Court terme / remplacement (disponible rapidement)</label>
+                <label class="check-row"><input type="checkbox" name="typePlacement" value="stage"> Stage rémunéré (expérience canadienne)</label>
+                <label class="check-row" id="lmiaCheck"><input type="checkbox" name="typePlacement" value="lmia"> Parrainage LMIA par un employeur canadien (international)</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Disponibilité</label>
+              <select name="disponibilite">
+                <option value="">— Sélectionner —</option>
+                <option value="immediat">Immédiate (dès maintenant)</option>
+                <option value="2sem">Sous 2 semaines</option>
+                <option value="1mois">Sous 1 mois</option>
+                <option value="3mois">Sous 3 mois</option>
+                <option value="6mois">Dans 3 à 6 mois</option>
+                <option value="flexible">Flexible / selon l'offre</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Prétention salariale (annuelle, CAD)</label>
+              <select name="salaire">
+                <option value="">— Sélectionner —</option>
+                <option value="0-40k">Moins de 40 000 $</option>
+                <option value="40-55k">40 000 $ – 55 000 $</option>
+                <option value="55-70k">55 000 $ – 70 000 $</option>
+                <option value="70-90k">70 000 $ – 90 000 $</option>
+                <option value="90-120k">90 000 $ – 120 000 $</option>
+                <option value="120k+">120 000 $ et plus</option>
+                <option value="negociable">À négocier selon l'offre</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Mobilité géographique</label>
+              <select name="mobilite">
+                <option value="">— Sélectionner —</option>
+                <option value="local">Ma ville uniquement</option>
+                <option value="region">Ma région (100 km)</option>
+                <option value="province">Ma province</option>
+                <option value="canada">Partout au Canada</option>
+                <option value="teletravail">Télétravail privilégié</option>
+                <option value="hybride">Hybride accepté</option>
+              </select>
+            </div>
+            <div class="form-group full">
+              <label>Résumé de votre profil / informations complémentaires</label>
+              <textarea name="resume" placeholder="Décrivez brièvement votre parcours, vos compétences clés, et ce que vous recherchez. Ajoutez tout ce qui peut aider nos recruteurs à mieux vous représenter."></textarea>
+            </div>
+            <div class="form-group full">
+              <label>Lien LinkedIn ou portfolio (optionnel)</label>
+              <input type="url" name="linkedin" placeholder="https://linkedin.com/in/votre-profil">
+            </div>
+            <div class="form-group full">
+              <label>CV (optionnel — à joindre par courriel)</label>
+              <p class="hint" style="margin-bottom:8px">Envoyez votre CV à <strong>candidats@uricanada.ca</strong> avec votre nom complet en objet. (Formulaire de téléversement disponible prochainement.)</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- CONSENTEMENT -->
+        <div class="form-section">
+          <div class="form-section-label">04 — Consentement &amp; représentation</div>
+          <div class="consent-box">
+            <h4>Autorisation de représentation</h4>
+            <p>En soumettant ce formulaire, vous autorisez URI Canada Inc. à conserver vos informations dans son système CRM sécurisé et à vous présenter à des employeurs partenaires correspondant à votre profil. Vos données ne sont jamais partagées sans votre accord préalable à chaque opportunité.</p>
+            <p>Conformément à la <em>Loi 25 (Loi sur la protection des renseignements personnels dans le secteur privé)</em>, vous pouvez retirer votre consentement à tout moment en écrivant à <strong>candidats@uricanada.ca</strong>.</p>
+            <div style="display:flex;flex-direction:column;gap:12px;margin-top:16px">
+              <label class="consent-check" id="chkRepresentation">
+                <input type="checkbox" name="consentRepresentation" id="consentRepresentation" required>
+                <span>J'autorise URI Canada à me représenter auprès d'employeurs et à conserver mon dossier dans son CRM sécurisé. Je comprends que ce service est <strong>entièrement gratuit</strong> pour les candidats. <span class="req">*</span></span>
+              </label>
+              <label class="consent-check">
+                <input type="checkbox" name="consentLoi25" id="consentLoi25" required>
+                <span>J'ai lu et j'accepte la <a href="index.html#contact" style="color:var(--navy);text-decoration:underline">politique de confidentialité</a> d'URI Canada, conforme à la Loi 25. <span class="req">*</span></span>
+              </label>
+              <label class="consent-check">
+                <input type="checkbox" name="consentComm">
+                <span>J'accepte de recevoir des communications d'URI Canada (offres d'emploi, mises à jour dossier, conseils carrière). <em>Optionnel — vous pouvez vous désabonner en tout temps.</em></span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- SUBMIT -->
+        <div class="form-submit">
+          <button type="submit" class="btn lg" id="submitBtn">
+            Soumettre mon dossier →
+          </button>
+          <p class="note">⏱ Un recruteur URI Canada vous contactera dans les <strong>48 h ouvrables</strong>. Dossier 100 % gratuit et sans engagement.</p>
+        </div>
+      </form>
+
+      <!-- SUCCESS -->
+      <div id="successMsg">
+        <h3>✅ Dossier reçu — bienvenue dans le réseau URI Canada !</h3>
+        <p>Votre dossier a été transmis à notre équipe de recrutement. Un recruteur spécialisé dans votre secteur vous contactera dans les <strong>48 h ouvrables</strong> pour un entretien préliminaire.<br><br>
+        <strong>Prochaine étape :</strong> Envoyez votre CV à <a href="mailto:candidats@uricanada.ca" style="color:var(--green);text-decoration:underline">candidats@uricanada.ca</a> avec votre nom complet en objet.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="blk" style="background:#fff">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="eyebrow">Questions fréquentes</span>
+      <h2>Tout ce que vous devez savoir</h2>
+    </div>
+    <div style="max-width:780px;margin:0 auto" class="reveal">
+      <details open>
+        <summary>Est-ce vraiment gratuit pour les candidats ?</summary>
+        <div class="faq-body">Oui, à 100 %. URI Canada est rémunéré par les employeurs — uniquement lorsqu'un placement est confirmé et réussi. Vous ne déboursez jamais un seul dollar, ni pour l'inscription, ni pour le suivi, ni pour l'accompagnement LMIA (pour les candidats internationaux).</div>
+      </details>
+      <details>
+        <summary>Comment fonctionne le processus pour les candidats internationaux ?</summary>
+        <div class="faq-body">Une fois votre dossier soumis, un recruteur spécialisé en recrutement international vous contacte. On identifie un employeur canadien prêt à vous parrainer, on initie la demande d'Étude d'Impact sur le Marché du Travail (EIMT/LMIA), puis on vous accompagne pour le permis de travail auprès d'IRCC. On coordonne aussi votre arrivée (logement temporaire, orientation, premiers jours).</div>
+      </details>
+      <details>
+        <summary>Combien de temps faut-il avant d'être placé(e) ?</summary>
+        <div class="faq-body">Pour les candidats locaux, les premières propositions d'emploi arrivent généralement en 1 à 4 semaines selon votre secteur. Pour les candidats internationaux avec LMIA, le processus complet (de l'inscription à l'arrivée au Canada) prend typiquement 4 à 9 mois selon la profession et la province cible.</div>
+      </details>
+      <details>
+        <summary>Puis-je m'inscrire si je suis déjà en emploi ?</summary>
+        <div class="faq-body">Absolument. Beaucoup de candidats de notre réseau sont en poste mais ouverts aux opportunités. Votre dossier reste entièrement confidentiel. Vos coordonnées ne sont jamais partagées à votre employeur actuel, ni à aucun employeur, sans votre accord explicite pour chaque opportunité spécifique.</div>
+      </details>
+      <details>
+        <summary>Que se passe-t-il si mon placement ne fonctionne pas ?</summary>
+        <div class="faq-body">URI Canada offre une garantie de remplacement 90 jours sur tous ses placements permanents. Si la relation ne convient pas (vous ou l'employeur) dans les 90 jours, on relance le processus de matching sans frais. Votre dossier reste actif dans notre réseau.</div>
+      </details>
+      <details>
+        <summary>Comment puis-je retirer mon dossier ou mes données ?</summary>
+        <div class="faq-body">Conformément à la Loi 25, vous pouvez demander la suppression de vos données à tout moment en écrivant à <strong>candidats@uricanada.ca</strong> avec la mention « Retrait dossier — [Votre nom] ». On traite toutes les demandes dans un délai de 30 jours.</div>
+      </details>
+      <details>
+        <summary>Quels secteurs sont les plus demandés en ce moment ?</summary>
+        <div class="faq-body">Les secteurs en pénurie de main-d'œuvre les plus actifs dans notre réseau sont : construction et génie civil (électriciens, plombiers, charpentiers), santé (infirmières, PAB, technologistes médicaux), transport (camionneurs, opérateurs de machinerie) et technologies de l'information (développeurs, administrateurs systèmes). Ces secteurs bénéficient aussi des délais de traitement LMIA les plus rapides pour les candidats internationaux.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section style="background:var(--navy);padding:64px 0;text-align:center">
+  <div class="wrap">
+    <span class="eyebrow" style="color:var(--coral)">Prêt(e) à faire le saut ?</span>
+    <h2 style="color:#fff;font-size:clamp(28px,4vw,46px);margin:14px 0 20px;max-width:18ch;margin-left:auto;margin-right:auto">Votre prochain emploi commence par un dossier.</h2>
+    <p style="color:#b8c2d6;margin-bottom:32px;font-size:17px">Inscription gratuite. Matching en 48 h. Zéro engagement.</p>
+    <a class="btn lg" href="#inscription">Ouvrir mon dossier maintenant →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">URI Canada</div>
+        <p class="foot-brand" style="font-size:14px;font-family:Figtree">Placement · Recrutement · Court terme<br>Partout au Canada</p>
+      </div>
+      <div>
+        <h5>Candidats</h5>
+        <ul>
+          <li><a href="offres.html">Offres d'emploi</a></li>
+          <li><a href="inscription-candidats.html">Ouvrir mon dossier</a></li>
+          <li><a href="matching.html">Algorithme de matching</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Employeurs</h5>
+        <ul>
+          <li><a href="employeurs.html">Portail employeurs</a></li>
+          <li><a href="portail-temporaires.html">Court terme urgent</a></li>
+          <li><a href="index.html#contact">Soumettre un mandat</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="mailto:candidats@uricanada.ca">candidats@uricanada.ca</a></li>
+          <li><a href="mailto:contact@uricanada.ca">contact@uricanada.ca</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 URI Canada Inc. Tous droits réservés.</span>
+      <span>Conforme Loi 25 · Politique de confidentialité disponible sur demande</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Scroll progress
+const bar=document.getElementById('progress');
+window.addEventListener('scroll',()=>{
+  const h=document.documentElement;
+  bar.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';
+});
+
+// Reveal on scroll
+const io=new IntersectionObserver(els=>els.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// Type selection
+function selectType(type){
+  document.getElementById('tab-local').classList.toggle('active',type==='local');
+  document.getElementById('tab-international').classList.toggle('active',type==='international');
+  document.getElementById('statutSection').style.display=(type==='local')?'flex':'none';
+  document.getElementById('paysOrigineSection').style.display=(type==='international')?'block':'none';
+  document.getElementById('nationaliteSection').style.display=(type==='international')?'block':'none';
+  document.getElementById('lmiaCheck').style.display=(type==='international')?'flex':'none';
+  document.getElementById('inscriptionForm').dataset.type=type;
+}
+// Default to local
+selectType('local');
+
+// Form submit (staging: no backend — simulate success)
+document.getElementById('inscriptionForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  const form=this;
+  const prenom=form.querySelector('[name=prenom]').value.trim();
+  const nom=form.querySelector('[name=nom]').value.trim();
+  const email=form.querySelector('[name=email]').value.trim();
+  const titre=form.querySelector('[name=titrePoste]').value.trim();
+  const consentRep=document.getElementById('consentRepresentation').checked;
+  const consentL25=document.getElementById('consentLoi25').checked;
+
+  if(!prenom||!nom||!email||!titre){alert('Veuillez remplir tous les champs obligatoires (*).');return;}
+  if(!consentRep||!consentL25){alert('Veuillez accepter les deux consentements obligatoires pour continuer.');return;}
+
+  // Staging: log to console (no real submission)
+  const payload={
+    type:form.dataset.type||'local',prenom,nom,email,
+    telephone:form.querySelector('[name=telephone]').value,
+    ville:form.querySelector('[name=ville]').value,
+    pays:form.querySelector('[name=pays]').value,
+    titrePoste:titre,
+    experience:form.querySelector('[name=experience]').value,
+    secteurs:[...form.querySelectorAll('[name=secteurs]:checked')].map(i=>i.value),
+    typePlacement:[...form.querySelectorAll('[name=typePlacement]:checked')].map(i=>i.value),
+    disponibilite:form.querySelector('[name=disponibilite]').value,
+    salaire:form.querySelector('[name=salaire]').value,
+    consentRepresentation:consentRep,
+    consentLoi25:consentL25,
+    consentComm:form.querySelector('[name=consentComm]').checked,
+    timestamp:new Date().toISOString()
+  };
+  console.log('[URI Canada] Dossier candidat (staging):', payload);
+
+  form.style.display='none';
+  const msg=document.getElementById('successMsg');
+  msg.style.display='block';
+  msg.scrollIntoView({behavior:'smooth'});
+});
+</script>
+</body>
+</html>

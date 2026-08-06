@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /404.html
+
+# Canonique = apex uricanada.ca (crm.uricanada.ca hors service / non déployé au 2026-08-04).
+Sitemap: https://uricanada.ca/sitemap.xml

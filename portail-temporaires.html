@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>URI Canada — Main-d'œuvre Temporaire · Dispatch en 48 h</title>
+<meta name="description" content="Main-d'œuvre temporaire disponible en 48 h. Remplacement maladie, rush de production, événementiel, construction saisonnière. Tarif horaire transparent. Partout au Canada.">
+<link rel="canonical" href="https://uricanada.ca/portail-temporaires">
+<meta name="theme-color" content="#16264a">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/svg+xml" sizes="any" href="favicon.svg">
+<link rel="mask-icon" href="/favicon.svg" color="#16264a">
+<meta property="og:title" content="URI Canada — Main-d'œuvre Court Terme en 48 h">
+<meta property="og:description" content="Dispatch garanti en 4 h. Remplacement immédiat, rush de production, événementiel. Aucun contrat minimum. Facturation hebdomadaire.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Figtree:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#101a2e;--paper:#f5f6f9;--navy:#16264a;--navy2:#223c6e;
+  --coral:#ff6a48;--coral2:#e5502f;--mist:#d7deea;--line:#dde2ec;
+  --muted:#586179;--success:#1a7a47;--warn:#c8892a;
+  --amber:#f59e0b;--amber2:#d97706;
+  --shadow:0 1px 2px rgba(16,26,46,.05),0 18px 44px -18px rgba(16,26,46,.3);
+  --r:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:"Figtree",system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{font-family:"Fraunces",Georgia,serif;font-weight:500;line-height:1.05;letter-spacing:-.01em}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+.eyebrow{font-family:"Spline Sans Mono",monospace;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--coral2)}
+.eyebrow.amber{color:var(--amber2)}
+
+/* URGENCY TICKER */
+.ticker{background:var(--amber);color:#1a1000;font-size:13.5px;font-weight:600;padding:9px 0;text-align:center;letter-spacing:.02em}
+.ticker span{display:inline-flex;align-items:center;gap:8px}
+.ticker .pulse{display:inline-block;width:8px;height:8px;border-radius:50%;background:#c05c00;animation:blink 1s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+
+/* NAV */
+header{position:sticky;top:0;z-index:50;background:rgba(245,246,249,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:66px}
+.brand{display:flex;align-items:center;gap:10px;font-family:"Fraunces";font-size:20px;font-weight:600}
+.brand .mark{width:28px;height:28px;border-radius:8px;background:var(--navy);position:relative;flex:0 0 auto}
+.brand .mark::after{content:"";position:absolute;inset:9px 7px auto 7px;height:3px;border-radius:2px;background:var(--coral)}
+.navlinks{display:flex;gap:20px;align-items:center;font-size:15px;color:var(--muted)}
+.navlinks a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--coral);color:#fff;font-weight:600;padding:12px 20px;border-radius:11px;font-size:15px;border:1px solid var(--coral2);cursor:pointer;transition:transform .15s,box-shadow .15s;font-family:inherit;white-space:nowrap;text-align:center;justify-content:center}
+.btn:hover{transform:translateY(-1px);box-shadow:0 10px 24px -8px rgba(229,80,47,.5)}
+.btn.ghost{background:transparent;color:var(--navy);border-color:var(--mist)}
+.btn.ghost:hover{background:#ecf0f6}
+.btn.navy{background:var(--navy);border-color:var(--navy2)}
+.btn.navy:hover{box-shadow:0 10px 24px -8px rgba(22,38,74,.5)}
+.btn.amber-btn{background:var(--amber);border-color:var(--amber2);color:#1a1000}
+.btn.amber-btn:hover{box-shadow:0 10px 24px -8px rgba(245,158,11,.5)}
+.btn.sm{padding:9px 15px;font-size:14px}
+.btn.lg{padding:15px 28px;font-size:17px;border-radius:13px}
+.btn.white{background:#fff;color:var(--coral2);border-color:#fff}
+.btn.white:hover{box-shadow:0 10px 24px -6px rgba(255,255,255,.4)}
+.btn.ghost-white{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
+.btn.ghost-white:hover{background:rgba(255,255,255,.1)}
+.nav-active{color:var(--navy);font-weight:600}
+@media(max-width:900px){.navlinks a:not(.btn){display:none}}
+
+/* HERO — urgence, rouge-ambre */
+.hero{background:linear-gradient(155deg,#0d1930 0%,var(--navy) 55%,#1a0f02 100%);color:#eaeef6;padding:76px 0 64px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-160px;right:-120px;width:500px;height:500px;background:radial-gradient(circle,rgba(245,158,11,.18),transparent 62%)}
+.hero::after{content:"";position:absolute;bottom:-60px;left:-60px;width:280px;height:280px;background:radial-gradient(circle,rgba(255,106,72,.12),transparent 65%)}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;position:relative}
+.hero .eyebrow{color:var(--amber)}
+.hero h1{font-size:clamp(36px,5vw,60px);color:#fff;max-width:18ch;margin-top:14px}
+.hero p.lead{margin:20px 0 32px;font-size:18px;color:#b8c2d6;max-width:42ch}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.hero-badges{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap}
+.hbadge{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:6px 14px;font-size:13px;color:#b8c2d6}
+.hbadge .dot{width:6px;height:6px;border-radius:50%;background:var(--amber);flex:0 0 auto}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr}}
+
+/* URGENCE CARD dans le hero */
+.urgence-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:28px;backdrop-filter:blur(8px)}
+.urgence-card h3{font-family:"Fraunces";font-size:22px;color:#fff;margin-bottom:18px}
+.urgence-steps{display:flex;flex-direction:column;gap:12px}
+.ust{display:flex;align-items:center;gap:14px;padding:12px 16px;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08)}
+.ust .num{font-family:"Spline Sans Mono";font-size:11px;color:var(--amber);letter-spacing:.1em;font-weight:500;white-space:nowrap}
+.ust p{font-size:14.5px;color:#d0d9e8;line-height:1.4}
+.ust strong{color:#fff}
+.dispatch-badge{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:#1a1000;font-weight:700;font-size:13px;border-radius:10px;padding:8px 16px;margin-top:18px}
+
+/* STATS BAR */
+.stats-bar{background:var(--navy);border-top:1px solid rgba(255,255,255,.06)}
+.stats-bar .wrap{display:flex;flex-wrap:wrap;justify-content:space-between}
+.stat-item{padding:16px 20px;display:flex;flex-direction:column;align-items:center;text-align:center;border-right:1px solid rgba(255,255,255,.06);flex:1;min-width:140px}
+.stat-item:last-child{border-right:none}
+.stat-item .num{font-family:"Spline Sans Mono";font-size:24px;color:#fff;font-weight:500}
+.stat-item .lbl{font-size:13px;color:#8293b0;margin-top:2px}
+
+/* SECTIONS */
+section.blk{padding:88px 0}
+.shead{max-width:660px;margin-bottom:48px}
+.shead h2{font-size:clamp(29px,4vw,46px);margin-top:12px}
+.shead p{color:var(--muted);margin-top:14px;font-size:17px}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s}
+.reveal.visible{opacity:1;transform:none}
+
+/* CATÉGORIES DE BESOINS */
+.cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:800px){.cat-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.cat-grid{grid-template-columns:1fr}}
+.cat-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:26px;transition:box-shadow .2s,border-color .2s;cursor:default}
+.cat-card:hover{box-shadow:var(--shadow);border-color:var(--mist)}
+.cat-card .icon{font-size:28px;margin-bottom:14px}
+.cat-card h3{font-size:19px;margin-bottom:8px}
+.cat-card p{font-size:15px;color:var(--muted);line-height:1.5}
+.cat-card .tag{display:inline-block;margin-top:12px;font-family:"Spline Sans Mono";font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:6px;background:var(--paper);border:1px solid var(--line);color:var(--muted)}
+.cat-card.urgent .tag{background:#fff3e0;border-color:#f59e0b55;color:var(--amber2)}
+
+/* TARIFICATION */
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:800px){.pricing-grid{grid-template-columns:1fr}}
+.price-card{background:#fff;border:1.5px solid var(--line);border-radius:var(--r);padding:32px 28px;transition:box-shadow .2s}
+.price-card.featured{border-color:var(--coral);box-shadow:0 0 0 3px rgba(255,106,72,.1)}
+.price-card .badge-feat{display:inline-block;background:var(--coral);color:#fff;font-size:12px;font-weight:700;padding:3px 10px;border-radius:6px;margin-bottom:16px;letter-spacing:.05em}
+.price-card h3{font-size:21px;margin-bottom:8px}
+.price-card .price{font-family:"Spline Sans Mono";font-size:36px;color:var(--navy);font-weight:500;margin:16px 0 4px}
+.price-card .price sup{font-size:18px;vertical-align:super}
+.price-card .price sub{font-size:14px;color:var(--muted);vertical-align:baseline;margin-left:3px}
+.price-card .note{font-size:13.5px;color:var(--muted);margin-bottom:20px}
+.price-card ul{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:24px}
+.price-card ul li{display:flex;align-items:flex-start;gap:9px;font-size:15px;color:var(--ink)}
+.price-card ul li::before{content:"✓";color:var(--success);font-weight:700;flex:0 0 auto;margin-top:1px}
+
+/* COMMENT ÇA MARCHE */
+.steps-wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+@media(max-width:900px){.steps-wrap{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.steps-wrap{grid-template-columns:1fr}}
+.step-item{padding:28px 24px;position:relative}
+.step-item:not(:last-child)::after{content:"";position:absolute;top:44px;right:-1px;width:2px;height:32px;background:var(--line)}
+@media(max-width:900px){.step-item:nth-child(2)::after,.step-item:nth-child(4)::after{display:none}}
+@media(max-width:520px){.step-item::after{display:none!important}}
+.step-num{font-family:"Spline Sans Mono";font-size:13px;color:var(--coral2);font-weight:500;letter-spacing:.1em;margin-bottom:12px}
+.step-item h3{font-size:18px;margin-bottom:8px}
+.step-item p{font-size:15px;color:var(--muted);line-height:1.5}
+.step-item .time-badge{display:inline-flex;align-items:center;gap:5px;margin-top:10px;font-size:12.5px;font-weight:600;color:var(--amber2);background:#fff3e0;padding:4px 10px;border-radius:6px;border:1px solid rgba(245,158,11,.25)}
+
+/* PROFILS DISPONIBLES */
+.profils-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media(max-width:600px){.profils-grid{grid-template-columns:1fr}}
+.profil-row{display:flex;align-items:center;justify-content:space-between;background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 20px;gap:12px}
+.profil-info{display:flex;align-items:center;gap:14px}
+.profil-avatar{width:40px;height:40px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;font-size:18px;flex:0 0 auto}
+.profil-name{font-weight:600;font-size:15.5px}
+.profil-spec{font-size:13px;color:var(--muted)}
+.avail-badge{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:600;padding:4px 10px;border-radius:999px;white-space:nowrap;flex:0 0 auto}
+.avail-badge.now{background:#d1fae5;color:var(--success)}
+.avail-badge.soon{background:#fef3c7;color:var(--amber2)}
+.avail-badge .dot{width:6px;height:6px;border-radius:50%;background:currentColor;flex:0 0 auto}
+
+/* SECTEURS */
+.secteurs-pills{display:flex;flex-wrap:wrap;gap:10px}
+.pill{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:9px 18px;font-size:15px;color:var(--ink);transition:border-color .15s,box-shadow .15s}
+.pill:hover{border-color:var(--coral);box-shadow:0 0 0 3px rgba(255,106,72,.08)}
+.pill span.ico{font-size:17px}
+
+/* FORMULAIRE DEMANDE */
+.form-section{background:var(--navy);color:#eaeef6;padding:88px 0;position:relative;overflow:hidden}
+.form-section::before{content:"";position:absolute;top:-200px;right:-160px;width:500px;height:500px;background:radial-gradient(circle,rgba(245,158,11,.15),transparent 62%)}
+.form-wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;position:relative}
+@media(max-width:900px){.form-wrap{grid-template-columns:1fr}}
+.form-left h2{font-size:clamp(28px,4vw,42px);color:#fff;margin-top:12px}
+.form-left p{color:#b8c2d6;margin-top:16px;font-size:17px;line-height:1.7}
+.form-perks{display:flex;flex-direction:column;gap:16px;margin-top:32px}
+.perk-item{display:flex;align-items:flex-start;gap:14px}
+.perk-ico{width:36px;height:36px;border-radius:10px;background:rgba(245,158,11,.15);border:1px solid rgba(245,158,11,.2);display:flex;align-items:center;justify-content:center;font-size:18px;flex:0 0 auto}
+.perk-text strong{color:#fff;display:block;font-size:15.5px}
+.perk-text span{font-size:14px;color:#8293b0}
+.form-card{background:#fff;border-radius:20px;padding:36px;box-shadow:0 24px 60px -16px rgba(0,0,0,.4)}
+.form-card h3{font-family:"Fraunces";font-size:22px;color:var(--ink);margin-bottom:22px}
+.form-group{margin-bottom:16px}
+.form-group label{display:block;font-size:14px;font-weight:600;color:var(--ink);margin-bottom:7px}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:12px 15px;border:1.5px solid var(--line);border-radius:10px;font-family:inherit;font-size:15.5px;color:var(--ink);background:#fff;outline:none;transition:border-color .15s}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--coral);box-shadow:0 0 0 3px rgba(255,106,72,.1)}
+.form-group textarea{min-height:100px;resize:vertical}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:520px){.form-row{grid-template-columns:1fr}}
+.form-submit{margin-top:20px}
+.form-note{font-size:13px;color:var(--muted);margin-top:12px;text-align:center}
+/* segment tabs */
+.seg-tabs{display:flex;border:1.5px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:22px}
+.seg-tab{flex:1;padding:10px;text-align:center;font-size:14px;font-weight:600;color:var(--muted);cursor:pointer;background:#f9fafb;transition:background .15s,color .15s;border:none;font-family:inherit}
+.seg-tab.active{background:var(--navy);color:#fff}
+.seg-panel{display:none}
+.seg-panel.active{display:block}
+
+/* SECTION TRAVAILLEURS */
+.workers-section{background:linear-gradient(135deg,#f5f6f9 0%,#eef0f6 100%)}
+.workers-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+@media(max-width:900px){.workers-grid{grid-template-columns:1fr}}
+.workers-visual{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.worker-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px}
+.worker-card.featured{border-color:var(--coral);box-shadow:0 0 0 2px rgba(255,106,72,.08)}
+.worker-card .whead{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.worker-ava{width:34px;height:34px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;font-size:16px}
+.worker-name{font-weight:700;font-size:14px}
+.worker-role{font-size:12px;color:var(--muted)}
+.worker-skills{display:flex;flex-wrap:wrap;gap:5px}
+.wskill{font-size:11.5px;background:var(--paper);border:1px solid var(--line);border-radius:5px;padding:2px 8px;color:var(--muted)}
+.wrating{font-size:12px;color:var(--amber2);margin-top:10px;font-weight:600}
+
+/* GARANTIES */
+.garanties{background:#fff;border:1px solid var(--line);border-radius:20px;padding:36px;display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+@media(max-width:700px){.garanties{grid-template-columns:1fr}}
+.garantie-item{text-align:center}
+.garantie-ico{font-size:32px;margin-bottom:12px}
+.garantie-item h4{font-size:17px;margin-bottom:8px}
+.garantie-item p{font-size:14.5px;color:var(--muted);line-height:1.5}
+
+/* TESTIMONIALS */
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:800px){.testi-grid{grid-template-columns:1fr}}
+.testi-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:26px}
+.stars{color:var(--amber);font-size:15px;margin-bottom:12px;letter-spacing:2px}
+.testi-card q{font-size:15.5px;color:var(--ink);line-height:1.6;display:block;margin-bottom:16px}
+.testi-author{display:flex;align-items:center;gap:10px}
+.testi-ava{width:36px;height:36px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;font-size:14px;color:#fff;font-weight:600;flex:0 0 auto}
+.testi-name{font-weight:700;font-size:14.5px}
+.testi-co{font-size:13px;color:var(--muted)}
+
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;gap:0;border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-item:last-child{border-bottom:none}
+.faq-q{width:100%;background:none;border:none;padding:20px 24px;text-align:left;font-family:inherit;font-size:16px;font-weight:600;color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.faq-q .chevron{transition:transform .25s;flex:0 0 auto;font-size:18px;color:var(--muted)}
+.faq-item.open .faq-q .chevron{transform:rotate(180deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s}
+.faq-item.open .faq-a{max-height:500px;padding:0 24px 18px}
+.faq-a p{font-size:15.5px;color:var(--muted);line-height:1.65}
+
+/* CTA FINAL */
+.cta-block{background:linear-gradient(155deg,var(--coral2) 0%,#c03820 100%);border-radius:24px;padding:56px 48px;text-align:center;color:#fff;position:relative;overflow:hidden}
+.cta-block::before{content:"";position:absolute;top:-80px;right:-80px;width:280px;height:280px;background:radial-gradient(circle,rgba(255,255,255,.12),transparent 65%)}
+.cta-block h2{font-size:clamp(28px,4vw,44px);color:#fff;margin-bottom:16px}
+.cta-block p{font-size:18px;color:rgba(255,255,255,.82);max-width:52ch;margin:0 auto 32px}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+/* FOOTER */
+footer{background:var(--navy);color:#8293b0;padding:48px 0 32px}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+@media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.footer-grid{grid-template-columns:1fr}}
+.footer-brand{font-family:"Fraunces";font-size:19px;color:#fff;margin-bottom:12px;display:flex;align-items:center;gap:9px}
+.footer-brand .mark{width:24px;height:24px;border-radius:7px;background:rgba(255,106,72,.2);border:1px solid rgba(255,106,72,.3);position:relative;flex:0 0 auto}
+.footer-brand .mark::after{content:"";position:absolute;inset:8px 6px auto 6px;height:2px;border-radius:2px;background:var(--coral)}
+.footer-tagline{font-size:14px;line-height:1.6;max-width:28ch}
+footer h4{font-family:"Figtree";font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:#fff;font-weight:700;margin-bottom:14px}
+footer ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+footer ul li a{font-size:14.5px;transition:color .15s}
+footer ul li a:hover{color:#fff}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.07);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:13px}
+.footer-links{display:flex;gap:20px}
+.footer-links a:hover{color:#fff}
+.brand-logo{height:32px;width:auto;display:block}.brand-logo-sm{height:22px;width:auto;display:inline-block;vertical-align:middle}
+</style>
+</head>
+<body>
+
+<!-- TICKER URGENCE -->
+<div class="ticker">
+  <span>
+    <span class="pulse"></span>
+    Dispatch actif — réponse garantie en 4 h &nbsp;·&nbsp; Lun–Sam 06 h–22 h &nbsp;·&nbsp; Urgences 24/7 : <strong>1 833-URI-TEMP</strong>
+  </span>
+</div>
+
+<!-- NAV -->
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="index.html">
+        <img src="logo-uri.png" alt="URI Canada" class="brand-logo"> Canada
+      </a>
+      <div class="navlinks">
+        <a href="index.html">Accueil</a>
+        <a href="offres.html">Offres d'emploi</a>
+        <a href="employeurs.html">Placement</a>
+        <a href="portail-temporaires.html" class="nav-active">Court terme</a>
+        <a href="mailto:contact@uricanada.ca" class="btn amber-btn sm">Demande urgente</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow amber">Court terme · Remplacement · Urgence</div>
+        <h1>La bonne personne. En 4 heures.</h1>
+        <p class="lead">Remplacement maladie, rush de production, événementiel ou congé imprévu — nous dispatchez un profil qualifié, référencé et prêt avant votre prochain quart.</p>
+        <div class="hero-cta">
+          <a href="#demande" class="btn amber-btn lg">Soumettre une demande</a>
+          <a href="tel:18334878367" class="btn ghost-white lg">📞 Urgence 24/7</a>
+        </div>
+        <div class="hero-badges">
+          <div class="hbadge"><span class="dot"></span>Aucun contrat minimum</div>
+          <div class="hbadge"><span class="dot"></span>Facturation hebdomadaire</div>
+          <div class="hbadge"><span class="dot"></span>Candidats pré-vérifiés</div>
+        </div>
+      </div>
+
+      <div class="urgence-card">
+        <h3>Comment ça fonctionne</h3>
+        <div class="urgence-steps">
+          <div class="ust">
+            <span class="num">ÉTAPE 01</span>
+            <p><strong>Soumettez votre besoin</strong> en ligne ou par téléphone — 3 minutes</p>
+          </div>
+          <div class="ust">
+            <span class="num">ÉTAPE 02</span>
+            <p><strong>Notre équipe identifie</strong> 2–3 profils disponibles dans votre secteur</p>
+          </div>
+          <div class="ust">
+            <span class="num">ÉTAPE 03</span>
+            <p><strong>Confirmation envoyée</strong> en moins de 4 h — y compris CV et références</p>
+          </div>
+          <div class="ust">
+            <span class="num">ÉTAPE 04</span>
+            <p><strong>Le travailleur se présente</strong> à l'heure, prêt à travailler</p>
+          </div>
+        </div>
+        <div class="dispatch-badge">⚡ Dispatch garanti en 48 h ouvrables</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="wrap">
+    <div class="stat-item"><span class="num">4 h</span><span class="lbl">Délai moyen de dispatch</span></div>
+    <div class="stat-item"><span class="num">97 %</span><span class="lbl">Taux de présence confirmée</span></div>
+    <div class="stat-item"><span class="num">800+</span><span class="lbl">Travailleurs actifs au bassin</span></div>
+    <div class="stat-item"><span class="num">14</span><span class="lbl">Secteurs couverts</span></div>
+    <div class="stat-item"><span class="num">0 $</span><span class="lbl">Frais d'inscription</span></div>
+  </div>
+</div>
+
+<!-- CATÉGORIES DE BESOINS -->
+<section class="blk">
+  <div class="wrap">
+    <div class="shead reveal">
+      <div class="eyebrow">Situations couvertes</div>
+      <h2>Tous les imprévus. Une seule agence.</h2>
+      <p>Du remplacement de dernière minute au rush saisonnier, notre bassin de travailleurs couvre 14 secteurs — disponibles aujourd'hui.</p>
+    </div>
+    <div class="cat-grid">
+      <div class="cat-card urgent reveal">
+        <div class="icon">🤒</div>
+        <h3>Remplacement maladie</h3>
+        <p>Employé absent ce matin ? Nous vous envoyons un remplaçant qualifié avant le début du quart.</p>
+        <span class="tag">Disponible aujourd'hui</span>
+      </div>
+      <div class="cat-card urgent reveal">
+        <div class="icon">🏭</div>
+        <h3>Rush de production</h3>
+        <p>Commande urgente, délai serré ou surcharge temporaire — main-d'œuvre supplémentaire sous 4 h.</p>
+        <span class="tag">Disponible aujourd'hui</span>
+      </div>
+      <div class="cat-card reveal">
+        <div class="icon">🎪</div>
+        <h3>Événementiel & Accueil</h3>
+        <p>Salons, conférences, galas — personnel d'accueil, manutention et coordination événementielle.</p>
+        <span class="tag">Sur réservation</span>
+      </div>
+      <div class="cat-card reveal">
+        <div class="icon">🏗️</div>
+        <h3>Construction saisonnière</h3>
+        <p>Manœuvres, aides-poseurs, nettoyeurs de chantier — disponibles à la journée ou à la semaine.</p>
+        <span class="tag">Sur réservation</span>
+      </div>
+      <div class="cat-card reveal">
+        <div class="icon">🍽️</div>
+        <h3>Restauration & Hôtellerie</h3>
+        <p>Plongeurs, aides-cuisine, serveurs, commis — personnel formé prêt pour service dès le soir.</p>
+        <span class="tag">Disponible aujourd'hui</span>
+      </div>
+      <div class="cat-card reveal">
+        <div class="icon">📦</div>
+        <h3>Entrepôt & Logistique</h3>
+        <p>Cueilleurs, emballeurs, caristes légers, réceptionnistes de marchandises pour vos pics de volume.</p>
+        <span class="tag">Sur réservation</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMENT ÇA MARCHE — détail -->
+<section class="blk" style="background:#fff;padding:88px 0">
+  <div class="wrap">
+    <div class="shead reveal">
+      <div class="eyebrow">Processus</div>
+      <h2>Simple, rapide, sans paperasse.</h2>
+    </div>
+    <div class="steps-wrap">
+      <div class="step-item reveal">
+        <div class="step-num">01 — Demande</div>
+        <h3>Soumettez en 3 min</h3>
+        <p>Remplissez le formulaire : secteur, profil, date, durée. Ou appelez directement — nous notons tout pour vous.</p>
+        <div class="time-badge">⏱ 3 minutes</div>
+      </div>
+      <div class="step-item reveal">
+        <div class="step-num">02 — Matching</div>
+        <h3>Profil identifié</h3>
+        <p>Notre algorithme scanne le bassin disponible et sélectionne les 2–3 meilleures correspondances selon vos critères.</p>
+        <div class="time-badge">⏱ &lt; 1 heure</div>
+      </div>
+      <div class="step-item reveal">
+        <div class="step-num">03 — Confirmation</div>
+        <h3>CV + références envoyés</h3>
+        <p>Vous recevez le profil complet par courriel ou SMS. Vous approuvez, on confirme le déploiement.</p>
+        <div class="time-badge">⏱ &lt; 4 heures</div>
+      </div>
+      <div class="step-item reveal">
+        <div class="step-num">04 — Présence</div>
+        <h3>Le travailleur arrive</h3>
+        <p>Ponctuel, briefé sur votre contexte, avec tous les EPI requis selon le secteur. Satisfaction garantie ou remplacement gratuit.</p>
+        <div class="time-badge">⏱ À l'heure convenue</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TARIFICATION -->
+<section class="blk" id="tarifs">
+  <div class="wrap">
+    <div class="shead reveal">
+      <div class="eyebrow">Tarification transparente</div>
+      <h2>Payez ce que vous consommez.</h2>
+      <p>Aucun abonnement mensuel, aucun minimum d'heures imposé. Facturation hebdomadaire avec détail de chaque déploiement.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="price-card reveal">
+        <h3>Ponctuel</h3>
+        <div class="price"><sup>$</sup>28<sub>/h + TVQ</sub></div>
+        <div class="note">Taux de base · Profils semi-qualifiés</div>
+        <ul>
+          <li>Manœuvres, plongeurs, commis</li>
+          <li>Dispatch &lt; 24 h</li>
+          <li>Vérification identité incluse</li>
+          <li>Facturation hebdomadaire</li>
+          <li>Aucun frais d'annulation &gt; 12 h</li>
+        </ul>
+        <a href="#demande" class="btn ghost">Commencer</a>
+      </div>
+      <div class="price-card featured reveal">
+        <div class="badge-feat">POPULAIRE</div>
+        <h3>Qualifié</h3>
+        <div class="price"><sup>$</sup>38<sub>/h + TVQ</sub></div>
+        <div class="note">Profils intermédiaires · Expérience vérifiée</div>
+        <ul>
+          <li>Chefs de partie, superviseurs, techniciens</li>
+          <li>Dispatch &lt; 4 h garanti</li>
+          <li>Références employeur incluses</li>
+          <li>Remplacement gratuit si insatisfaction</li>
+          <li>Rapport de déploiement fourni</li>
+        </ul>
+        <a href="#demande" class="btn">Commencer</a>
+      </div>
+      <div class="price-card reveal">
+        <h3>Spécialisé</h3>
+        <div class="price"><sup>$</sup>52<sub>/h + TVQ</sub></div>
+        <div class="note">Profils seniors · Certifications requises</div>
+        <ul>
+          <li>Caristes, soudeurs, infirmiers auxiliaires</li>
+          <li>Certifications vérifiées (ASP, DEP, etc.)</li>
+          <li>Gestion dédiée 24/7</li>
+          <li>Contrat-cadre sur mesure disponible</li>
+          <li>Rapport de rendement hebdomadaire</li>
+        </ul>
+        <a href="#demande" class="btn ghost">Nous contacter</a>
+      </div>
+    </div>
+    <p style="text-align:center;color:var(--muted);margin-top:24px;font-size:15px;">Volume régulier ? Contactez-nous pour un tarif préférentiel sur contrat-cadre trimestriel.</p>
+  </div>
+</section>
+
+<!-- PROFILS DISPONIBLES (mock) -->
+<section class="blk" style="background:#fff;padding:80px 0">
+  <div class="wrap">
+    <div class="shead reveal">
+      <div class="eyebrow">Bassin actif</div>
+      <h2>Exemples de profils disponibles aujourd'hui</h2>
+      <p>Extrait mis à jour quotidiennement. La disponibilité réelle est confirmée lors de votre demande.</p>
+    </div>
+    <div class="profils-grid reveal">
+      <div class="profil-row">
+        <div class="profil-info">
+          <div class="profil-avatar">👷</div>
+          <div>
+            <div class="profil-name">M. L. — Aide-poseur</div>
+            <div class="profil-spec">Construction · Laval, QC · 3 ans exp.</div>
+          </div>
+        </div>
+        <span class="avail-badge now"><span class="dot"></span>Disponible</span>
+      </div>
+      <div class="profil-row">
+        <div class="profil-info">
+          <div class="profil-avatar">🍳</div>
+          <div>
+            <div class="profil-name">K. T. — Cuisinier DEP</div>
+            <div class="profil-spec">Restauration · Montréal, QC · 5 ans exp.</div>
+          </div>
+        </div>
+        <span class="avail-badge now"><span class="dot"></span>Disponible</span>
+      </div>
+      <div class="profil-row">
+        <div class="profil-info">
+          <div class="profil-avatar">📦</div>
+          <div>
+            <div class="profil-name">A. R. — Cariste (Propane)</div>
+            <div class="profil-spec">Entrepôt · Longueuil, QC · Certifié</div>
+          </div>
+        </div>
+        <span class="avail-badge soon"><span class="dot"></span>Demain matin</span>
+      </div>
+      <div class="profil-row">
+        <div class="profil-info">
+          <div class="profil-avatar">🛎️</div>
+          <div>
+            <div class="profil-name">S. B. — Coordonnatrice événements</div>
+            <div class="profil-spec">Événementiel · Québec · 8 ans exp.</div>
+          </div>
+        </div>
+        <span class="avail-badge now"><span class="dot"></span>Disponible</span>
+      </div>
+      <div class="profil-row">
+        <div class="profil-info">
+          <div class="profil-avatar">🔧</div>
+          <div>
+            <div class="profil-name">D. M. — Technicien maintenance</div>
+            <div class="profil-spec">Industrie · Brossard, QC · DEP Électromécanique</div>
+          </div>
+        </div>
+        <span class="avail-badge now"><span class="dot"></span>Disponible</span>
+      </div>
+      <div class="profil-row">
+        <div class="profil-info">
+          <div class="profil-avatar">🌿</div>
+          <div>
+            <div class="profil-name">P. N. — Aide-agricole</div>
+            <div class="profil-spec">Agriculture · Rougemont, QC · Saisonnier</div>
+          </div>
+        </div>
+        <span class="avail-badge soon"><span class="dot"></span>Dès lundi</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTEURS -->
+<section class="blk">
+  <div class="wrap">
+    <div class="shead reveal">
+      <div class="eyebrow">Secteurs couverts</div>
+      <h2>14 industries, partout au Canada.</h2>
+    </div>
+    <div class="secteurs-pills reveal">
+      <span class="pill"><span class="ico">🏭</span>Manufacturier</span>
+      <span class="pill"><span class="ico">🍽️</span>Restauration</span>
+      <span class="pill"><span class="ico">🏗️</span>Construction</span>
+      <span class="pill"><span class="ico">📦</span>Logistique & Entrepôt</span>
+      <span class="pill"><span class="ico">🎪</span>Événementiel</span>
+      <span class="pill"><span class="ico">🛒</span>Commerce de détail</span>
+      <span class="pill"><span class="ico">🌿</span>Agriculture</span>
+      <span class="pill"><span class="ico">🏨</span>Hôtellerie</span>
+      <span class="pill"><span class="ico">🏥</span>Soins auxiliaires</span>
+      <span class="pill"><span class="ico">🚛</span>Transport</span>
+      <span class="pill"><span class="ico">🧹</span>Entretien ménager</span>
+      <span class="pill"><span class="ico">🖥️</span>Bureau & Admin</span>
+      <span class="pill"><span class="ico">🎓</span>Éducation & Garderies</span>
+      <span class="pill"><span class="ico">🔧</span>Maintenance industrielle</span>
+    </div>
+  </div>
+</section>
+
+<!-- FORMULAIRE DEMANDE URGENTE -->
+<section class="form-section" id="demande">
+  <div class="wrap">
+    <div class="form-wrap">
+      <div class="form-left">
+        <div class="eyebrow amber">Demande de main-d'œuvre</div>
+        <h2>Soumettez votre besoin maintenant.</h2>
+        <p>Notre équipe examine chaque demande dans l'heure. Un coordonnateur vous contacte pour confirmer le profil et les détails avant déploiement.</p>
+        <div class="form-perks">
+          <div class="perk-item">
+            <div class="perk-ico">⚡</div>
+            <div class="perk-text">
+              <strong>Réponse en &lt; 1 heure</strong>
+              <span>Lun–Sam 06 h–22 h · Urgences 24/7</span>
+            </div>
+          </div>
+          <div class="perk-item">
+            <div class="perk-ico">🛡️</div>
+            <div class="perk-text">
+              <strong>Candidats pré-vérifiés</strong>
+              <span>Identité, références, casier judiciaire (si requis)</span>
+            </div>
+          </div>
+          <div class="perk-item">
+            <div class="perk-ico">🔄</div>
+            <div class="perk-text">
+              <strong>Remplacement gratuit</strong>
+              <span>Si le profil ne convient pas, on remplace sans frais</span>
+            </div>
+          </div>
+          <div class="perk-item">
+            <div class="perk-ico">📋</div>
+            <div class="perk-text">
+              <strong>Aucun contrat à signer</strong>
+              <span>Bon de commande par courriel suffit</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-card">
+        <!-- Segment : Entreprise vs Travailleur -->
+        <div class="seg-tabs">
+          <button class="seg-tab active" onclick="switchSeg('entreprise',this)">Je cherche du personnel</button>
+          <button class="seg-tab" onclick="switchSeg('travailleur',this)">Je cherche du travail</button>
+        </div>
+
+        <!-- ENTREPRISE -->
+        <div class="seg-panel active" id="seg-entreprise">
+          <h3>Demande court terme</h3>
+          <form action="mailto:contact@uricanada.ca" method="get" enctype="text/plain">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Nom de l'entreprise *</label>
+                <input type="text" placeholder="Acme Industries inc." required>
+              </div>
+              <div class="form-group">
+                <label>Secteur d'activité *</label>
+                <select required>
+                  <option value="">Choisir…</option>
+                  <option>Manufacturier</option>
+                  <option>Restauration / Hôtellerie</option>
+                  <option>Construction</option>
+                  <option>Logistique / Entrepôt</option>
+                  <option>Événementiel</option>
+                  <option>Agriculture</option>
+                  <option>Commerce de détail</option>
+                  <option>Soins / Santé auxiliaire</option>
+                  <option>Bureau / Administration</option>
+                  <option>Autre</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Nom du contact *</label>
+                <input type="text" placeholder="Marie Tremblay" required>
+              </div>
+              <div class="form-group">
+                <label>Téléphone *</label>
+                <input type="tel" placeholder="514 000-0000" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Courriel professionnel *</label>
+              <input type="email" placeholder="marie@acmeindustries.ca" required>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Profil recherché *</label>
+                <input type="text" placeholder="Aide-poseur, cuisinier DEP…" required>
+              </div>
+              <div class="form-group">
+                <label>Nombre de personnes *</label>
+                <select required>
+                  <option>1</option>
+                  <option>2–3</option>
+                  <option>4–6</option>
+                  <option>7–10</option>
+                  <option>10+</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Date de début *</label>
+                <input type="date" required>
+              </div>
+              <div class="form-group">
+                <label>Durée estimée</label>
+                <select>
+                  <option>1 jour</option>
+                  <option>2–5 jours</option>
+                  <option>1–2 semaines</option>
+                  <option>1 mois et +</option>
+                  <option>À déterminer</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Détails supplémentaires</label>
+              <textarea placeholder="Horaire, EPI requis, certifications, adresse du chantier / site…"></textarea>
+            </div>
+            <div class="form-submit">
+              <button type="submit" class="btn amber-btn" style="width:100%">⚡ Envoyer la demande</button>
+            </div>
+            <p class="form-note">En soumettant ce formulaire, vous acceptez d'être contacté par URI Canada. Aucun engagement avant confirmation écrite.</p>
+          </form>
+        </div>
+
+        <!-- TRAVAILLEUR -->
+        <div class="seg-panel" id="seg-travailleur">
+          <h3>Inscription travailleur court terme</h3>
+          <form action="mailto:contact@uricanada.ca" method="get" enctype="text/plain">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Prénom *</label>
+                <input type="text" placeholder="Jean" required>
+              </div>
+              <div class="form-group">
+                <label>Nom *</label>
+                <input type="text" placeholder="Dupont" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Téléphone *</label>
+                <input type="tel" placeholder="514 000-0000" required>
+              </div>
+              <div class="form-group">
+                <label>Courriel *</label>
+                <input type="email" placeholder="jean@gmail.com" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Ville / Région *</label>
+              <input type="text" placeholder="Montréal, QC" required>
+            </div>
+            <div class="form-group">
+              <label>Secteur(s) d'expérience *</label>
+              <select required>
+                <option value="">Choisir le principal…</option>
+                <option>Manufacturier</option>
+                <option>Restauration / Hôtellerie</option>
+                <option>Construction</option>
+                <option>Logistique / Entrepôt</option>
+                <option>Événementiel</option>
+                <option>Agriculture</option>
+                <option>Commerce de détail</option>
+                <option>Bureau / Administration</option>
+                <option>Soins / Santé auxiliaire</option>
+                <option>Autre</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Disponibilité *</label>
+              <select required>
+                <option>Immédiate (aujourd'hui / demain)</option>
+                <option>Cette semaine</option>
+                <option>La semaine prochaine</option>
+                <option>Weekends seulement</option>
+                <option>Flexible</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Expérience & certifications</label>
+              <textarea placeholder="Indiquez vos postes récents, certifications ASP, DEP, permis cariste, langues…"></textarea>
+            </div>
+            <div class="form-submit">
+              <button type="submit" class="btn" style="width:100%">Rejoindre le bassin URI</button>
+            </div>
+            <p class="form-note">Inscription gratuite. Vous serez contacté uniquement pour des mandats correspondant à votre profil.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GARANTIES -->
+<section class="blk" style="padding:80px 0">
+  <div class="wrap">
+    <div class="shead reveal" style="margin:0 auto 48px;text-align:center;max-width:700px">
+      <div class="eyebrow">Nos engagements</div>
+      <h2>Trois garanties, sans condition.</h2>
+    </div>
+    <div class="garanties reveal">
+      <div class="garantie-item">
+        <div class="garantie-ico">⚡</div>
+        <h4>Dispatch en 48 h</h4>
+        <p>Si nous ne pouvons pas dispatcher un profil dans les 48 heures ouvrables suivant votre confirmation, la première journée est offerte.</p>
+      </div>
+      <div class="garantie-item">
+        <div class="garantie-ico">🔄</div>
+        <h4>Remplacement gratuit</h4>
+        <p>Le profil ne correspond pas ? Nous remplaçons sans frais supplémentaires, sans délai, sans justification requise de votre part.</p>
+      </div>
+      <div class="garantie-item">
+        <div class="garantie-ico">📋</div>
+        <h4>Transparence totale</h4>
+        <p>Taux horaire affiché, aucun frais cachés. Facturation détaillée par déploiement, chaque semaine.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TÉMOIGNAGES -->
+<section class="blk" style="background:#fff;padding:80px 0">
+  <div class="wrap">
+    <div class="shead reveal">
+      <div class="eyebrow">Ils nous font confiance</div>
+      <h2>Des entreprises qui ne reviennent jamais bredouilles.</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <div class="stars">★★★★★</div>
+        <q>Notre cuisinier principal est tombé malade un vendredi soir. URI Canada nous a envoyé un remplaçant qualifié le lendemain matin — DEP en main. Service impeccable.</q>
+        <div class="testi-author">
+          <div class="testi-ava">JF</div>
+          <div>
+            <div class="testi-name">Jean-François B.</div>
+            <div class="testi-co">Directeur F&B · Hôtel Laurentien</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="stars">★★★★★</div>
+        <q>On avait un rush de production inattendu. URI nous a fourni 4 aides-manœuvres qualifiés en moins de 3 heures. Tous sont revenus pour d'autres mandats depuis.</q>
+        <div class="testi-author">
+          <div class="testi-ava">ML</div>
+          <div>
+            <div class="testi-name">Marie-Lune C.</div>
+            <div class="testi-co">Directrice des opérations · Plasticase inc.</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="stars">★★★★★</div>
+        <q>Pour nos salons et événements annuels, URI Canada est devenu notre partenaire exclusif. Personnel professionnel, ponctuel, et qui comprend les standards d'un événement haut de gamme.</q>
+        <div class="testi-author">
+          <div class="testi-ava">SP</div>
+          <div>
+            <div class="testi-name">Sophie P.</div>
+            <div class="testi-co">Gestionnaire événements · Palais des congrès</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="blk" id="faq">
+  <div class="wrap" style="max-width:800px">
+    <div class="shead reveal">
+      <div class="eyebrow">FAQ</div>
+      <h2>Questions fréquentes</h2>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Quel est le minimum d'heures par mandat ?
+          <span class="chevron">▾</span>
+        </button>
+        <div class="faq-a"><p>Le minimum facturable est de 4 heures par déploiement (couvrir les déplacements et la valeur du candidat). Il n'y a aucun minimum de mandats par mois — utilisez-nous uniquement quand vous en avez besoin.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Comment les travailleurs sont-ils vérifiés ?
+          <span class="chevron">▾</span>
+        </button>
+        <div class="faq-a"><p>Tous les travailleurs de notre bassin passent par : vérification d'identité, validation des références employeur (2 minimum), et vérification du casier judiciaire pour les postes sensibles (garderies, soins, résidences). Les certifications professionnelles (ASP, DEP, cariste) sont vérifiées auprès des organismes émetteurs.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Qui est l'employeur légal ? Vous ou nous ?
+          <span class="chevron">▾</span>
+        </button>
+        <div class="faq-a"><p>URI Canada est l'employeur légal — nous gérons la paie, les déductions à la source, la CSST, et les assurances. Vous ne signez pas de contrat de travail direct avec le travailleur. Vous recevez un bon de commande et une facture hebdomadaire pour les heures prestées.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Que se passe-t-il si le travailleur ne se présente pas ?
+          <span class="chevron">▾</span>
+        </button>
+        <div class="faq-a"><p>C'est notre responsabilité, pas la vôtre. En cas de no-show confirmé, nous dispatchez un remplaçant immédiatement ou la journée est entièrement défrayée. Vous ne payez pas pour les heures non travaillées.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Peut-on embaucher un travailleur temporaire de façon permanente ?
+          <span class="chevron">▾</span>
+        </button>
+        <div class="faq-a"><p>Oui. Si un candidat court terme vous convient pour un poste permanent, un frais de conversion s'applique selon la durée du mandat déjà accompli. En général, après 480 heures facturées, la conversion est sans frais supplémentaires. Consultez-nous pour les détails.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Opérez-vous hors Québec ?
+          <span class="chevron">▾</span>
+        </button>
+        <div class="faq-a"><p>Oui — nous couvrons les provinces canadiennes, avec une concentration actuelle au Québec et en Ontario. Pour d'autres provinces, contactez-nous directement : les délais de dispatch peuvent varier selon la densité du bassin local.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section style="padding:64px 0 88px">
+  <div class="wrap">
+    <div class="cta-block reveal">
+      <h2>Un besoin urgent ce matin ?</h2>
+      <p>Appelez directement — notre équipe dispatch est disponible maintenant et peut confirmer un profil en moins d'une heure.</p>
+      <div class="cta-btns">
+        <a href="#demande" class="btn white lg">Remplir la demande en ligne</a>
+        <a href="tel:18334878367" class="btn ghost-white lg">📞 1 833-URI-TEMP</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img src="logo-uri.png" alt="URI Canada" class="brand-logo"> Canada
+        </div>
+        <p class="footer-tagline">Placement local, international et court terme. Le bon talent, à la bonne place.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="index.html">Placement permanent</a></li>
+          <li><a href="portail-temporaires.html">Court terme</a></li>
+          <li><a href="employeurs.html">Portail employeurs</a></li>
+          <li><a href="offres.html">Offres d'emploi</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Candidats</h4>
+        <ul>
+          <li><a href="offres.html">Voir les offres</a></li>
+          <li><a href="#demande">Rejoindre le bassin</a></li>
+          <li><a href="offres.html#international">Candidats internationaux</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:contact@uricanada.ca">contact@uricanada.ca</a></li>
+          <li><a href="tel:18334878367">1 833-URI-TEMP</a></li>
+          <li><a href="#">Montréal · Québec · Ottawa</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 URI Canada Inc. Tous droits réservés.</span>
+      <div class="footer-links">
+        <a href="#">Politique de confidentialité</a>
+        <a href="#">Conditions d'utilisation</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Scroll reveal
+const revealEls=document.querySelectorAll('.reveal');
+const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:.1});
+revealEls.forEach(el=>io.observe(el));
+
+// Segment tabs
+function switchSeg(id,btn){
+  document.querySelectorAll('.seg-tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.seg-panel').forEach(p=>p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('seg-'+id).classList.add('active');
+}
+
+// FAQ accordion
+function toggleFaq(btn){
+  const item=btn.closest('.faq-item');
+  const isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
+  if(!isOpen)item.classList.add('open');
+}
+</script>
+</body>
+</html>
